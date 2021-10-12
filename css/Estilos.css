@@ -2,3 +2,36 @@ body{
     background-image: url('../Images/Bg.png'); 
 }
 
+.jumbotron{
+    background-color: #7398A0;
+    color: white;
+}
+
+.panel-heading{
+    background-color: #7398A0 !important;
+    color: white !important;
+}
+
+.panel-body{
+    background-color: white !important;   
+}
+
+.navbar{
+    background-color: #3F4F54;
+}
+
+.navbar-brand:link, .navbar-brand:visited{
+    color: #7398A0 !important;
+}
+
+.navbar-brand:hover, .navbar-brand:active{
+    color: white !important;
+}
+
+#navbar li a:link, #navbar li a:visited{
+    color: white !important;
+}
+
+#navbar li a:hover, #navbar li a:active{
+    color: #7398A0 !important;
+}
