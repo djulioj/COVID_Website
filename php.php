@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+$serverName = "localhost\SQLEXPRESS";
+$connectionInfo = array("Database" => "Covid");
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+?>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,7 +12,7 @@
 
         <title>COVID-19 NEWS</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/estilos.css" rel="stylesheet">   
+        <link href="css/Estilos.css" rel="stylesheet">   
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -81,7 +86,7 @@
                                     <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Calendar
                                 </div>
                                 <div class="panel-body">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -90,15 +95,42 @@
                 <div class="col-md-8">
                     <div class="panel-default">
                         <div class="panel-heading">
-                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Last searches
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Registros
                         </div>
                         <div class="panel-body">
-                            <p>No searches yet</p>
+                            <?php
+                            
+                            $sql = "select Pais, Iso_code, Diafecha, V_por_millon_S from Vacunas";
+                            $stmt = sqlsrv_query($conn, $sql);
+
+                            if ($stmt === false) {
+                                die(print_r(sqlsrv_errors(), true));
+                            }
+                            echo "
+                                    <table class='table'>
+                                    <tr>
+                                    <th>Pais</th>
+                                    <th>Iso_code</th> 
+                                    <th>Diafecha</th> 
+                                    <th>V_por_millon_S</th> 
+                                    </tr>";                            
+                            while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                $time = time();                              
+                                echo "<tr>";
+                                echo "<td>" . $row['Pais'] . "</td>";
+                                echo "<td>" . $row['Iso_code'] . "</td>";
+                                echo "<td>" .DateTime($row['Diafecha'], $time). "</td>";
+                                echo "<td>" . $row['V_por_millon_S'] . "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
         <script src="js/jquery.min.js"></script>

@@ -21,6 +21,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
      <tr>
      <th>Pais</th>
      <th>Iso_code</th> 
+     <th>Diafecha</th> 
      <th>V_por_millon_S</th> 
      </tr>";
     
@@ -28,6 +29,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         echo "<tr>";
         echo "<td>".$row['Pais']."</td>";
         echo "<td>".$row['Iso_code']."</td>";
+        echo "<td>".date($row['Diafecha'])."</td>";
         echo "<td>".$row['V_por_millon_S']."</td>";
         echo "</tr>";
     }
