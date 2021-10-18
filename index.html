@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <style>
+    
+    </style>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -36,25 +40,25 @@
 
               <!--Logo-->
               <div class="col-md-5">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand">
                   <img src="img/logo.png"
                     height="30" alt="" loading="lazy" />
                 </a>
               </div>
-
+              
               <!--Iconos-->
               <div class="col-md-6">
                 <ul class="navbar-nav justify-content-center">
-                  <!-- Avatar -->
+                  <!-- Avatar --> 
                   <div class="dropdown">
-                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-primary dropdown-toggle btn-lg" href="#" role="button" id="langB"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-globe"></i> Cambiar idioma</a>
+                      <i class="fas fa-language fa-lg"></i> Cambiar idioma</a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
-                      <a class="dropdown-item" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
-                      <a class="dropdown-item" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
+                      <a class="dropdown-item" onclick="changeLanguage(1)" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
+                      <a class="dropdown-item" onclick="changeLanguage(0)" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
+                      <a class="dropdown-item" onclick="changeLanguage(2)" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
                       <!--  <li><a class="dropdown-item" href="#">Español</a></li>
                         <li><a class="dropdown-item" href="#">English</a></li>
                         <li><a class="dropdown-item" href="#">Deutsch</a></li> -->
@@ -103,7 +107,7 @@
 
             <!-- Suggestions -->
             <div>
-              <small>Integrantes del grupo</small>
+              <small>Desarrollado por</small>
             </div>
 
             <!-- Suggested users -->
@@ -121,17 +125,16 @@
                     <small class="user-name"><strong>Henry Caicedo Pimienta</strong></small>
                   </li>
                   <li>
-                    <span class="user-name">Blah blah blah</span>
+                    <span class="user-name">hecaicedo@uninorte.edu.co</span>
                   </li>
                 </ul>
               </div>
               <div class="col-md-2">
-                <p class="user-name mt-4 text-primary">Follow</p>  
               </div>
               <!--Second person-->
               <!--Photo-->
               <div class="col-md-2">
-                <img src="https://mdbootstrap.com/img/new/avatars/10.jpg" class="rounded-circle mt-2" height="40"
+                <img src="https://lh3.googleusercontent.com/a-/AOh14GhJqToqzaW3rxjsnPBIBbxMVW8xbvUlSo9_zPxk=s300-p-k-rw-no" class="rounded-circle mt-2" height="40"
                   alt="Avatar" />
               </div>
               <!--Text-->
@@ -141,12 +144,11 @@
                     <small class="user-name"><strong>Breynner Hurtado</strong></small>
                   </li>
                   <li>
-                    <span class="user-name">Blah blah blah</span>
+                    <span class="user-name">breynnerh@uninorte.edu.co</span>
                   </li>
                 </ul>
               </div>
-              <div class="col-md-2">
-                <p class="user-name mt-4 text-primary">Follow</p>  
+              <div class="col-md-2"> 
               </div>
               <!--Third Person-->
               <!--Photo-->
@@ -161,12 +163,11 @@
                     <small class="user-name"><strong>Juan David Julio</strong></small>
                   </li>
                   <li>
-                    <span class="user-name">Blah blah blah</span>
+                    <span class="user-name">djulioj@uninorte.edu.co</span>
                   </li>
                 </ul>
               </div>
               <div class="col-md-2">
-                <p class="user-name mt-4 text-primary">Follow</p>  
               </div>
           </section>
         </div>
@@ -175,18 +176,18 @@
             <div class="post">
 
               <!--Welcome Card-->
-              <div class="card border border-primary shadow-0 mb-3">
+              <div id=tarjeta class="card border border-primary shadow-0 mb-3">
                 <div class="card-body text-primary">
-                  <h5 class="card-title">¡Bienvenid@!</h5>
-                  <p class="card-text">
+                  <h5 id=welcomeT class="card-title">¡Bienvenid@!</h5>
+                  <p id=welcomeBodyT class="card-text">
                     Some quick example text to build on the card title and make up the bulk of the
                     card's content.
                   </p>
                 </div>
               </div>
 
-              <!--INFECTED CARD-->
-              <div class="card">
+              <!--FIRST CARD-->
+              <div class="card mb-3">
                 <div class="card-body">
                   <h1 class="card-title">Infectados</h1>
                   <p class="card-text">
@@ -196,7 +197,7 @@
                 </div>
 
                 <!-- Tab navs -->
-                <div class="card-body">
+                <div class="card-body" style="height: 33rem">
                   <div class="container">
                     <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                       <li class="nav-item" role="presentation">
@@ -217,13 +218,39 @@
                     <div class="tab-content" id="ex1-content">
                       <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
                         aria-labelledby="ex1-tab-1">
-                        Tab 1 content
+                        <div class="scrollbar scrollbar-primary">
+                          <div class="force-overflow"></div>
+                        </div>
+                        <!--Tab 1 content-->
+                        <!--Choose country-->
+                      <div class="dropdown">
+                          <a class="btn btn-link dropdown-toggle btn-lg" href="#" role="button" id="countryB"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe-americas"></i> Continente</a>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" onclick="changeContinent(0)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Norte</a>
+                            <a class="dropdown-item" onclick="changeContinent(1)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Sur</a>
+                            <a class="dropdown-item" onclick="changeContinent(2)" href="javascript:void(0)"><i class="fas fa-globe-europe"></i>&nbsp;&nbsp;Europa</a>
+                            <a class="dropdown-item" onclick="changeContinent(3)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Asia</a>
+                            <a class="dropdown-item" onclick="changeContinent(4)" href="javascript:void(0)"><i class="fas fa-globe-africa"></i>&nbsp;&nbsp;África</a>
+                            <a class="dropdown-item" onclick="changeContinent(5)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Oceanía</a>
+                          </ul>
+                        </div> 
+
+                        <div class="card-body" id="tab1Body">
+                          Tab 1 content
+                        </div>
+                          
                       </div>
                       <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                        Tab 2 content
+                        <div class="card-body" id="tab2Body">
+                          Tab 2 content
+                        </div>
                       </div>
                       <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                        Tab 3 content
+                        <div class="card-body" id="tab3Body">
+                          Tab 3 content
+                        </div>
                       </div>
                     </div>
                     <!-- Tabs content -->
@@ -242,15 +269,199 @@
                   </div>
                 </div>
               </div>
+
+              <!--SECOND CARD-->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Vacunados</h1>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.
+                  </p>
+                </div>
+
+                <!-- Tab navs -->
+                <div class="card-body" style="height: 33rem">
+                  <div class="container">
+                    <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="ex1-tab-1-b" data-mdb-toggle="tab" href="#ex1-tabs-1-b" role="tab"
+                          aria-controls="ex1-tabs-1-b" aria-selected="true">Tab 1</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="ex1-tab-2-b" data-mdb-toggle="tab" href="#ex1-tabs-2-b" role="tab"
+                          aria-controls="ex1-tabs-2-b" aria-selected="false">Tab 2</a>
+                      </li>
+                    </ul>
+                    <!-- Tabs navs -->
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="ex1-content-b">
+                      <div class="tab-pane fade show active" id="ex1-tabs-1-b" role="tabpanel"
+                        aria-labelledby="ex1-tab-1-b">
+                        <div class="scrollbar scrollbar-primary">
+                          <div class="force-overflow"></div>
+                        </div>
+                        <!--Tab 1 content-->
+                        <div class="card-body" id="tab1Body-b">
+                            Tab 1 content
+                        </div>
+                          
+                      </div>
+                      <div class="tab-pane fade" id="ex1-tabs-2-b" role="tabpanel" aria-labelledby="ex1-tab-2-b">
+                        <div class="card-body" id="tab2Body-b">
+                          Tab 2 content
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Tabs content -->
+                  </div>
+                </div>
+
+                <!-- Info card  -->
+                <div class="card-body">
+                  <div class="container">
+                    <div class="row">
+                      <p class="note note-primary">
+                        <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Cum doloremque officia laboriosam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--THIRD CARD-->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h1 class="card-title">Vacunados</h1>
+                  <p class="card-text">
+                    This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.
+                  </p>
+                </div>
+
+                <!-- Tab navs -->
+                <div class="card-body" style="height: 33rem">
+                  <div class="container">
+                    <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="ex1-tab-1-c" data-mdb-toggle="tab" href="#ex1-tabs-1-c" role="tab"
+                          aria-controls="ex1-tabs-1-c" aria-selected="true">Tab 1</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="ex1-tab-2-c" data-mdb-toggle="tab" href="#ex1-tabs-2-c" role="tab"
+                          aria-controls="ex1-tabs-2-c" aria-selected="false">Tab 2</a>
+                      </li>
+                    </ul>
+                    <!-- Tabs navs -->
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="ex1-content-c">
+                      <div class="tab-pane fade show active" id="ex1-tabs-1-c" role="tabpanel"
+                        aria-labelledby="ex1-tab-1-c">
+                        <div class="scrollbar scrollbar-primary">
+                          <div class="force-overflow"></div>
+                        </div>
+                        <!--Tab 1 content-->
+                        <div class="card-body" id="tab1Body-c">
+                            Tab 1 content
+                        </div>
+                          
+                      </div>
+                      <div class="tab-pane fade" id="ex1-tabs-2-c" role="tabpanel" aria-labelledby="ex1-tab-2-c">
+                        <div class="card-body" id="tab2Body-c">
+                          Tab 2 content
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Tabs content -->
+                  </div>
+                </div>
+
+                <!-- Info card  -->
+                <div class="card-body">
+                  <div class="container">
+                    <div class="row">
+                      <p class="note note-primary">
+                        <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Cum doloremque officia laboriosam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          
+              
             </div>
         </div>
       </div>
     </div>
   </main>
+
+
+  <script>
+
+    document.getElementById("testB").onClick = function(){changeLanguage(0)};
+
+    function changeContinent(cont){
+
+      var code=""
+
+      switch(cont){
+        default: //North America
+                code=""
+        break;
+        case 1: //South America
+                code=""
+        break;
+        case 1: //Europe
+                code=""
+        break;
+        case 1: //Asia
+               code=""
+        break;
+        case 1: //Africa
+                code=""
+        break;
+        case 1: //Oceania
+                code=""
+        break;
+      }
+      document.getElementById("tab1Body").innerHTML = code;
+    }
+
+
+    //Función cambiar idioma
+    function changeLanguage(lang){
+      switch (lang){
+        default: //English
+                welcomeT = "Welcome!";
+                langB = "Change language"
+                welcomeBodyT = "Some quick example text to build on the card title and make up the bulk of the card's content."
+        break;
+        case 1: //Spanish
+                welcomeT = "¡Bienvenid@!"
+                langB = "Cambiar idioma"
+                welcomeBodyT = "Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y constituir la mayor parte del contenido de la tarjeta."
+        break;
+        case 2: //German
+                welcomeT = "Herzlich willkommen!"
+                langB = "Sprache ändern"
+                welcomeBodyT = "Einige kurze Beispieltexte, die auf dem Kartentitel aufbauen und den Großteil des Karteninhalts ausmachen."
+      }
+
+      document.getElementById("welcomeT").innerHTML = welcomeT;
+      document.getElementById("welcomeBodyT").innerHTML = welcomeBodyT;
+      document.getElementById("langB").innerHTML = "<i class='fas fa-globe'></i> "+langB;
+    }
+  </script>
+
+
   <!-- MDB -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Custom scripts -->
   <script type="text/javascript" src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

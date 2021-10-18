@@ -1,7 +1,103 @@
  body {
         background-color: #fafafa;
+        overflow-y: scroll; /* Show vertical scrollbar */
+        overflow-x: scroll; /* Show horizontal scrollbar */
       }
 
+
+
+    
+
+    #tab1Body{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab2Body{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab3Body{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab1Body-b{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab2Body-b{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab1Body-c{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    #tab2Body-c{
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 400px;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-color: #e6e6e6;
+      border-bottom-color: #e6e6e6;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+   /* .nav {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      height: 115px;
+    }*/
+    
       #story {
         background-color: #fff;
         margin: auto;
