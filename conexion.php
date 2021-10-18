@@ -9,6 +9,4 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         echo "Fallo en la conexión.<br />";
         die(print_r(sqlrv_errors(), true));
     }    
-        
-    
 ?>

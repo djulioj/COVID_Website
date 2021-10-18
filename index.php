@@ -1,69 +1,586 @@
-<!DOCTYPE html>
+<?php
+$serverName = "localhost\SQLEXPRESS";
+$connectionInfo = array("Database" => "Covid");
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
+if ($conn) {
+    echo "Conexión establecida.<br />";
+} else {
+    echo "Fallo en la conexión.<br />";
+    die(print_r(sqlrv_errors(), true));
+}
+?>
+
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design for Bootstrap</title>
-  <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- MDB eCommerce core CSS -->
-  <link rel="stylesheet" href="css/mdb-ecommerce.min.css">
-  <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>COVID-DB</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+        <!-- MDB -->
+        <link rel="stylesheet" href="css/mdb.min.css" />
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/chart.min.js"></script>
+    </head>
 
-<body class="skin-light">
+    <body>
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <!-- Container wrapper -->
+                <div class="container-fluid">
+                    <!-- Toggle button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCenteredExample"
+                            aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
 
-  <!-- Start your project here-->
-  <div style="height: 100vh">
-    <div class="flex-center flex-column">
+                    <!-- Collapsible wrapper -->
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-1"></div>
 
-      <h1 class="text-hide animated fadeIn mb-4"
-        style="background-image: url('https://mdbcdn.b-cdn.net/img/logo/mdb-transparent-250px.png'); width: 250px; height: 90px;">
-        MDBootstrap</h1>
-      <h4 class="animated fadeIn mb-3"><strong>MDB eCommerce</strong></h4>
-      <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
-      <p class="animated fadeIn text-muted">MDB Team</p>
+                                <!--Logo-->
+                                <div class="col-md-5">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="img/logo.png"
+                                             height="30" alt="" loading="lazy" />
+                                    </a>
+                                </div>
 
-    </div>
-  </div>
-  <!-- Start your project here-->
-  <div class="dropdown">
-      <button
-        class="btn btn-primary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-mdb-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+                                <!--Iconos-->
+                                <div class="col-md-6">
+                                    <ul class="navbar-nav justify-content-center">
+                                        <!-- Avatar -->
+                                        <div class="dropdown">
+                                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                               data-mdb-toggle="dropdown" aria-expanded="false">
+                                                <i class="fas fa-globe"></i> Cambiar idioma
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
+                                                <a class="dropdown-item" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
+                                                <a class="dropdown-item" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
+                                                <!--  <li><a class="dropdown-item" href="#">Español</a></li>
+                                                  <li><a class="dropdown-item" href="#">English</a></li>
+                                                  <li><a class="dropdown-item" href="#">Deutsch</a></li> -->
+                                            </ul>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collapsible wrapper -->
+                </div>
+                <!-- Container wrapper -->
+            </nav>
+            <!-- Navbar -->
+        </header>
 
-  <!-- jQuery -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB eCommerce core JavaScript -->
-  <script type="text/javascript" src="js/mdb-ecommerce.min.js"></script>
-  <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+        <main>
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 d-md-none d-lg-block">
 
-</body>
+
+
+                        <section class="mt-5">
+                            <!-- About -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="https://bincaglobal.org/wp-content/uploads/2019/01/UniversidadNorte.jpg"
+                                         class="rounded-circle" height="60" alt="Avatar" />
+                                </div>
+                                <div class="col-md-9">
+                                    <ul class="ml-0 pl-1 mt-1 list-unstyled">
+                                        <li>
+                                            <p class="ml-3 text-dark mb-0 mt-1">
+                                                <strong>Acerca de</strong>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="ml-3 text-dark">Página web</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Suggestions -->
+                            <div>
+                                <small>Integrantes del grupo</small>
+                            </div>
+
+                            <!-- Suggested users -->
+                            <div class="row">
+                                <!--First Person-->
+                                <!--Photo-->
+                                <div class="col-md-2">
+                                    <img src="https://lh3.googleusercontent.com/fife/AAWUweXZu72X8gjkNo99StbBbB24kp97k5GlT-dAuQE9FPGBELnnCLGZVbfAdkIpzsQOo564vHJDs9qv9mdLtyigVJoxeIAcMLNOHezIPBgltyD6JGwJAo-jID2W7r-C7ARS_ntybJ2vNvvQF-xVHAsXSNwvy5ckcrR8wF8z0z0TziFEy9ZcMuvKosAoSZSCQdlnCdyRpYlSEKuH8wss1fCUV7dG7E5MC5STr2-1EZB2bgI4VyZ8tyjBDwzmJZrvvy-Yvm58gyK05Fy16EGpBbKto76z2xC12PP9lU-XpQQbcIph7KYm1JFuarhXPhfe1V4Y_xUsAbl1QjxjR7lvIWTssTxO_xhRQOg5ft6HKeWrUIE-nUTONXKckiM4vLtzofzMM5NSh9T2iYXZIzxm6hfDgeo-N0KrVFniz3rWb5A62KyPvER9WFGrI1X7qPLKq3rcmLY_HzK4524W2ioKjv2pUX1yd4PVVnpbMiY-YZ0qguniVmfKVx0wmagNRXnFY9m12uHtes86dE6vJBIVHQoHDGjm3WP1UqpcvP9dAvcaT6BvD7orFfIUn4Sb1d1o2faL7tl_uwVmhAFaIc4ZCapsy6EV2IJ92HuF6InUgo6DfU_P5cPmaWC_DiA5XT7roYiS9vorHmin5-I-02dM_tVsa8SxY0Z4BpCpMaxGrNz9z4Zw5KEyM0RqxB-cbEce9qV-TtoeMOP7JjQNsvcqDMg52f4EpcWLxUtxVUFpj-jx6CRD9Q=s83-c" class="rounded-circle mt-2" height="40"
+                                         alt="Avatar" />
+                                </div>
+                                <!--Text-->
+                                <div class="col-md-8">
+                                    <ul class="ml-0 pl-1 mt-1 list-unstyled">
+                                        <li>
+                                            <small class="user-name"><strong>Henry Caicedo Pimienta</strong></small>
+                                        </li>
+                                        <li>
+                                            <span class="user-name">Blah blah blah</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="user-name mt-4 text-primary">Follow</p>  
+                                </div>
+                                <!--Second person-->
+                                <!--Photo-->
+                                <div class="col-md-2">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/10.jpg" class="rounded-circle mt-2" height="40"
+                                         alt="Avatar" />
+                                </div>
+                                <!--Text-->
+                                <div class="col-md-8">
+                                    <ul class="ml-0 pl-1 mt-1 list-unstyled">
+                                        <li>
+                                            <small class="user-name"><strong>Breynner Hurtado</strong></small>
+                                        </li>
+                                        <li>
+                                            <span class="user-name">Blah blah blah</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="user-name mt-4 text-primary">Follow</p>  
+                                </div>
+                                <!--Third Person-->
+                                <!--Photo-->
+                                <div class="col-md-2">
+                                    <img src="https://lh3.googleusercontent.com/a-/AOh14GiRnyzBzxM15E6Qd8CPg_cc1LVn_4td7OYHx0wdqw=s300-p-k-rw-no" class="rounded-circle mt-2" height="40"
+                                         alt="Avatar" />
+                                </div>
+                                <!--Text-->
+                                <div class="col-md-7">
+                                    <ul class="ml-0 pl-1 mt-1 list-unstyled">
+                                        <li>
+                                            <small class="user-name"><strong>Juan David Julio</strong></small>
+                                        </li>
+                                        <li>
+                                            <span class="user-name">Blah blah blah</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="user-name mt-4 text-primary">Follow</p>  
+                                </div>
+                        </section>
+                    </div>
+                    <div class="col-md-7">
+                        <section class="newsfeed my-5">
+                            <div class="post">
+
+                                <!--Welcome Card-->
+                                <div class="card border border-primary shadow-0 mb-3">
+                                    <div class="card-body text-primary">
+                                        <h5 class="card-title">¡Bienvenidxs!</h5>
+                                        <p class="card-text">
+                                            Some quick example text to build on the card title and make up the bulk of the
+                                            card's content.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!--INFECTED CARD-->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Infectados</h1>
+                                        <p class="card-text">
+                                            This is a wider card with supporting text below as a natural lead-in to additional
+                                            content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+
+                                    <!-- Tab navs -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
+                                                       aria-controls="ex1-tabs-1" aria-selected="true">Gráfico</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
+                                                       aria-controls="ex1-tabs-2" aria-selected="false">Tabla</a>
+                                                </li>                                              
+                                            </ul>
+                                            <!-- Tabs navs -->
+                                            <!-- Tabs content -->
+                                            <div class="tab-content" id="ex1-content">
+                                                <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
+                                                     aria-labelledby="ex1-tab-1">   
+                                                    <canvas id="myChart"></canvas>
+                                                </div>                                               
+                                                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                                                    <?php
+                                                    $sql = "select Continente, sum(Casos_totales) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
+                                                    $stmt = sqlsrv_query($conn, $sql);
+
+                                                    if ($stmt === false) {
+                                                        die(print_r(sqlsrv_errors(), true));
+                                                    }
+                                                    echo "
+                                                        <table class='table'>
+                                                        <tr>
+                                                        <th>Continente</th>
+                                                        <th>Total de infectados</th>  
+                                                        </tr>";
+                                                    while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . $row['Continente'] . "</td>";
+                                                        echo "<td>" . $row['Total'] . "</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                    echo "</table>";
+                                                    ?>                                                   
+                                                </div>     
+                                            </div>
+                                            <!-- Tabs content -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Info card  -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <p class="note note-primary">
+                                                    <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Cum doloremque officia laboriosam.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Fallecidos en Suramérica</h1>
+                                        <p class="card-text">
+                                            This is a wider card with supporting text below as a natural lead-in to additional
+                                            content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+
+                                    <!-- Tab navs -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <ul class="nav nav-tabs mb-3" id="ex2" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="tab" href="#ex2-tabs-1" role="tab"
+                                                       aria-controls="ex2-tab-1" aria-selected="true">Gráfico</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="ex2-tab-2" data-mdb-toggle="tab" href="#ex2-tabs-2" role="tab"
+                                                       aria-controls="ex2-tab-2" aria-selected="false">Tabla</a>
+                                                </li>                                              
+                                            </ul>
+                                            <!-- Tabs navs -->
+                                            <!-- Tabs content -->
+                                            <div class="tab-content" id="ex2-content">
+                                                <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel"
+                                                     aria-labelledby="ex2-tab-1">   
+                                                    <canvas id="myChart2" width="100" height="100"></canvas>
+                                                </div>                                               
+                                                <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+                                                    <?php
+                                                    $sql2 = "select Pais, Registro_M.Total_muertes/10 as Fallecidos, Registro_M.Fecha as Hasta from Registro_M where Registro_M.Continente = 'South America' and Registro_M.Pais <> 'Falkland Islands' and Registro_M.Fecha like '%2021-10-12%' group by Registro_M.Pais, Registro_M.Total_muertes, Registro_M.Fecha";
+                                                    $stmt2 = sqlsrv_query($conn, $sql2);
+
+                                                    echo "
+                                                        <table class='table'>
+                                                        <tr>
+                                                        <th>País</th>
+                                                        <th>Total de fallecidos</th>  
+                                                        </tr>";
+                                                    while ($row = sqlsrv_fetch_Array($stmt2, SQLSRV_FETCH_ASSOC)) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . $row['Pais'] . "</td>";
+                                                        echo "<td>" . $row['Fallecidos'] . "</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                    echo "</table>";
+                                                    ?>
+                                                </div>     
+                                            </div>
+                                            <!-- Tabs content -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Info card  -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <p class="note note-primary">
+                                                    <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Cum doloremque officia laboriosam.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h1 class="card-title">Vacunados x millón en Colombia durante el mes de septiembre</h1>
+                                        <p class="card-text">
+                                            This is a wider card with supporting text below as a natural lead-in to additional
+                                            content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+
+                                    <!-- Tab navs -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <ul class="nav nav-tabs mb-3" id="ex3" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab"
+                                                       aria-controls="ex3-tab-1" aria-selected="true">Gráfico</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab"
+                                                       aria-controls="ex3-tab-2" aria-selected="false">Tabla</a>
+                                                </li>                                              
+                                            </ul>
+                                            <!-- Tabs navs -->
+                                            <!-- Tabs content -->
+                                            <div class="tab-content" id="ex3-content">
+                                                <div class="tab-pane fade show active" id="ex3-tabs-1" role="tabpanel"
+                                                     aria-labelledby="ex3-tab-1">   
+                                                    <canvas id="myChart3" width="100" height="100"></canvas>
+                                                </div>                                               
+                                                <div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
+                                                    <?php
+                                                    $sql3 = "select Pais, cast(Diafecha as nchar(50)) as fecha,sum(V_por_millon_S/10000) as vacunados from Vacunas where Vacunas.V_por_millon_S/10000 < 1 and Vacunas.Diafecha like '%-09-%' and Vacunas.Pais = 'Colombia' group by Pais, Diafecha";
+                                                    $stmt3 = sqlsrv_query($conn, $sql3);
+
+                                                    echo "
+                                                        <table class='table'>
+                                                        <tr>
+                                                        <th>País</th>
+                                                        <th>Fecha</th>
+                                                        <th># vacunados por millón</th>
+                                                        </tr>";
+                                                    while ($row = sqlsrv_fetch_Array($stmt3, SQLSRV_FETCH_ASSOC)) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . $row['Pais'] . "</td>";
+                                                        echo "<td>" . $row['fecha'] . "</td>";
+                                                        echo "<td>" . $row['vacunados'] . "</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                    echo "</table>";
+                                                    ?>
+                                                </div>     
+                                            </div>
+                                            <!-- Tabs content -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Info card  -->
+                                    <div class="card-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <p class="note note-primary">
+                                                    <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                                    Cum doloremque officia laboriosam.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- MDB -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- Custom scripts -->
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+
+    <script src="js/chart.min.js"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext("2d");
+        ctx.canvas.width = 50;
+        ctx.canvas.height = 50;
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
+                datasets: [{
+                        data: [611182330,
+                                536038560,
+                                380116970,
+                                2131430,
+                                84008330,
+                                773554090
+                            ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132)',
+                            'rgba(54, 162, 235)',
+                            'rgba(255, 206, 86)',
+                            'rgba(75, 192, 192)',
+                            'rgba(153, 102, 255)',
+                            'rgba(255, 159, 64)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                animation: {
+                    duration:4000
+                }
+            }
+        });
+    </script>
+    
+    <script>
+        var ctx2 = document.getElementById('myChart2');
+        var myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Argentina',                                         
+                        'Bolivia',                                           
+                        'Brazil',                                            
+                        'Chile',                                             
+                        'Colombia',                                          
+                        'Ecuador',                                           
+                        'Guyana',                                            
+                        'Paraguay',                                          
+                        'Peru',                                              
+                        'Suriname',                                          
+                        'Uruguay',                                           
+                        'Venezuela'],
+                datasets: [{
+                        data: [115547,
+                                18806,
+                                601398,
+                                37574,
+                                126692,
+                                32848,
+                                848,
+                                16207,
+                                199727,
+                                974,
+                                6064,
+                                4634],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(50, 224, 65, 0.2)',
+                            'rgba(50, 224, 221, 0.2)',
+                            'rgba(224, 50, 155, 0.2)',
+                            'rgba(224, 186, 50, 0.2)',
+                            'rgba(224, 149, 50, 0.2)',
+                            'rgba(50, 53, 224, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(50, 224, 65, 1)',
+                            'rgba(50, 224, 221, 1)',
+                            'rgba(224, 50, 155, 1)',
+                            'rgba(224, 186, 50, 1)',
+                            'rgba(224, 149, 50, 1)',
+                            'rgba(50, 53, 224, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                animation: {
+                    duration:4000
+                },
+                indexAxis: 'y'
+            }
+        });
+    </script>
+    
+    <script>
+        var ctx3 = document.getElementById('myChart3');
+        var myChart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Semana 1',                                         
+                        'Semana 2',                                           
+                        'Semana 3',                                            
+                        'Semana 4',                                             
+                        'Semana 5'],
+                datasets: [{
+                        data: [1.0723,
+                               2.7238,
+                               3.9587,
+                               5.2066,
+                               6.803],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                animation: {
+                    duration:4000
+                }
+            }
+        });
+    </script>
+    
+    
+  
 
 </html>

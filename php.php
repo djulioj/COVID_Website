@@ -12,7 +12,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
         <title>COVID-19 NEWS</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/Estilos.css" rel="stylesheet">   
+        <link href="css/Estilos.css" rel="stylesheet">  
+        <script src="js/chart.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -98,33 +99,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
                             <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Registros
                         </div>
                         <div class="panel-body">
-                            <?php
-                            
-                            $sql = "select Pais, Iso_code, Diafecha, V_por_millon_S from Vacunas";
-                            $stmt = sqlsrv_query($conn, $sql);
-
-                            if ($stmt === false) {
-                                die(print_r(sqlsrv_errors(), true));
-                            }
-                            echo "
-                                    <table class='table'>
-                                    <tr>
-                                    <th>Pais</th>
-                                    <th>Iso_code</th> 
-                                    <th>Diafecha</th> 
-                                    <th>V_por_millon_S</th> 
-                                    </tr>";                            
-                            while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                $time = time();                              
-                                echo "<tr>";
-                                echo "<td>" . $row['Pais'] . "</td>";
-                                echo "<td>" . $row['Iso_code'] . "</td>";
-                                echo "<td>" .DateTime($row['Diafecha'], $time). "</td>";
-                                echo "<td>" . $row['V_por_millon_S'] . "</td>";
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                            ?>
+                            <canvas id="myChart" width="100" height="100"></canvas> 
                         </div>
                     </div>
                 </div>
@@ -136,4 +111,34 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>
+    <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Europa', 'América norte', 'África', 'Oceanía', 'Asia', 'América del sur'],
+                datasets: [{
+                        label: 'V_por_millon_',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            }
+        });
+    </script> 
 </html>
