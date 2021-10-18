@@ -18,6 +18,7 @@ if ($conn) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>COVID-DB</title>
+        <link rel="shortcut icon" type="image/x-icon" href="Images/virus.ico" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
         <!-- Google Fonts Roboto -->
@@ -26,7 +27,6 @@ if ($conn) {
         <link rel="stylesheet" href="css/mdb.min.css" />
         <!-- Custom styles -->
         <link rel="stylesheet" href="css/style.css" />
-        <script src="js/chart.min.js"></script>
     </head>
 
     <body>
@@ -49,25 +49,28 @@ if ($conn) {
 
                                 <!--Logo-->
                                 <div class="col-md-5">
-                                    <a class="navbar-brand" href="#">
+                                    <a class="navbar-brand">
                                         <img src="img/logo.png"
                                              height="30" alt="" loading="lazy" />
                                     </a>
                                 </div>
 
+
+
                                 <!--Iconos-->
                                 <div class="col-md-6">
                                     <ul class="navbar-nav justify-content-center">
-                                        <!-- Avatar -->
+                                        <!-- Avatar --> 
+
                                         <div class="dropdown">
-                                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            <a class="btn btn-primary dropdown-toggle btn-lg" href="#" role="button" id="langB"
                                                data-mdb-toggle="dropdown" aria-expanded="false">
-                                                <i class="fas fa-globe"></i> Cambiar idioma
-                                            </a>
+                                                <i class="fas fa-language fa-lg"></i> Cambiar idioma</a>
+
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
-                                                <a class="dropdown-item" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
-                                                <a class="dropdown-item" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(1)" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(0)" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(2)" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
                                                 <!--  <li><a class="dropdown-item" href="#">Español</a></li>
                                                   <li><a class="dropdown-item" href="#">English</a></li>
                                                   <li><a class="dropdown-item" href="#">Deutsch</a></li> -->
@@ -116,7 +119,7 @@ if ($conn) {
 
                             <!-- Suggestions -->
                             <div>
-                                <small>Integrantes del grupo</small>
+                                <small>Desarrollado por</small>
                             </div>
 
                             <!-- Suggested users -->
@@ -134,17 +137,16 @@ if ($conn) {
                                             <small class="user-name"><strong>Henry Caicedo Pimienta</strong></small>
                                         </li>
                                         <li>
-                                            <span class="user-name">Blah blah blah</span>
+                                            <span class="user-name">hecaicedo@uninorte.edu.co</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-2">
-                                    <p class="user-name mt-4 text-primary">Follow</p>  
                                 </div>
                                 <!--Second person-->
                                 <!--Photo-->
                                 <div class="col-md-2">
-                                    <img src="https://mdbootstrap.com/img/new/avatars/10.jpg" class="rounded-circle mt-2" height="40"
+                                    <img src="https://lh3.googleusercontent.com/a-/AOh14GhJqToqzaW3rxjsnPBIBbxMVW8xbvUlSo9_zPxk=s300-p-k-rw-no" class="rounded-circle mt-2" height="40"
                                          alt="Avatar" />
                                 </div>
                                 <!--Text-->
@@ -154,12 +156,11 @@ if ($conn) {
                                             <small class="user-name"><strong>Breynner Hurtado</strong></small>
                                         </li>
                                         <li>
-                                            <span class="user-name">Blah blah blah</span>
+                                            <span class="user-name">breynnerh@uninorte.edu.co</span>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-2">
-                                    <p class="user-name mt-4 text-primary">Follow</p>  
+                                <div class="col-md-2"> 
                                 </div>
                                 <!--Third Person-->
                                 <!--Photo-->
@@ -174,12 +175,11 @@ if ($conn) {
                                             <small class="user-name"><strong>Juan David Julio</strong></small>
                                         </li>
                                         <li>
-                                            <span class="user-name">Blah blah blah</span>
+                                            <span class="user-name">djulioj@uninorte.edu.co</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-2">
-                                    <p class="user-name mt-4 text-primary">Follow</p>  
                                 </div>
                         </section>
                     </div>
@@ -188,18 +188,18 @@ if ($conn) {
                             <div class="post">
 
                                 <!--Welcome Card-->
-                                <div class="card border border-primary shadow-0 mb-3">
+                                <div id=tarjeta class="card border border-primary shadow-0 mb-3">
                                     <div class="card-body text-primary">
-                                        <h5 class="card-title">¡Bienvenidxs!</h5>
-                                        <p class="card-text">
+                                        <h5 id=welcomeT class="card-title">¡Bienvenid@!</h5>
+                                        <p id=welcomeBodyT class="card-text">
                                             Some quick example text to build on the card title and make up the bulk of the
                                             card's content.
                                         </p>
                                     </div>
                                 </div>
 
-                                <!--INFECTED CARD-->
-                                <div class="card">
+                                <!--FIRST CARD-->
+                                <div class="card mb-3">
                                     <div class="card-body">
                                         <h1 class="card-title">Infectados</h1>
                                         <p class="card-text">
@@ -209,48 +209,82 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body">
+                                    <div class="card-body" style="height: 33rem">
                                         <div class="container">
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
-                                                       aria-controls="ex1-tabs-1" aria-selected="true">Gráfico</a>
+                                                       aria-controls="ex1-tabs-1" aria-selected="true">Tab 1</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
-                                                       aria-controls="ex1-tabs-2" aria-selected="false">Tabla</a>
-                                                </li>                                              
+                                                       aria-controls="ex1-tabs-2" aria-selected="false">Tab 2</a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab"
+                                                       aria-controls="ex1-tabs-3" aria-selected="false">Tab 3</a>
+                                                </li>
                                             </ul>
                                             <!-- Tabs navs -->
                                             <!-- Tabs content -->
                                             <div class="tab-content" id="ex1-content">
                                                 <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
-                                                     aria-labelledby="ex1-tab-1">   
-                                                    <canvas id="myChart"></canvas>
-                                                </div>                                               
-                                                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                                                    <?php
-                                                    $sql = "select Continente, sum(Casos_totales) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
-                                                    $stmt = sqlsrv_query($conn, $sql);
+                                                     aria-labelledby="ex1-tab-1">
+                                                    <div class="scrollbar scrollbar-primary">
+                                                        <div class="force-overflow"></div>
+                                                    </div>
+                                                    <!--Tab 1 content-->
+                                                    <!--Choose country-->
+                                                    <div class="dropdown">
+                                                        <a class="btn btn-link dropdown-toggle btn-lg" href="#" role="button" id="countryB"
+                                                           data-mdb-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fas fa-globe-americas"></i> Continente</a>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" onclick="changeContinent(0)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Norte</a>
+                                                            <a class="dropdown-item" onclick="changeContinent(1)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Sur</a>
+                                                            <a class="dropdown-item" onclick="changeContinent(2)" href="javascript:void(0)"><i class="fas fa-globe-europe"></i>&nbsp;&nbsp;Europa</a>
+                                                            <a class="dropdown-item" onclick="changeContinent(3)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Asia</a>
+                                                            <a class="dropdown-item" onclick="changeContinent(4)" href="javascript:void(0)"><i class="fas fa-globe-africa"></i>&nbsp;&nbsp;África</a>
+                                                            <a class="dropdown-item" onclick="changeContinent(5)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Oceanía</a>
+                                                        </ul>
+                                                    </div> 
 
-                                                    if ($stmt === false) {
-                                                        die(print_r(sqlsrv_errors(), true));
-                                                    }
-                                                    echo "
+                                                    <div class="card-body" id="tab1Body">
+                                                        <p>ola</p>
+                                                    </div>
+
+                                                    
+                                                </div>
+                                                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                                                    <div class="card-body" id="tab2Body">
+                                                        <canvas id="myChart" width="100" height="100"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                                                    <div class="card-body" id="tab3Body">
+                                                        <?php
+                                                        $sql = "select Continente, sum(Casos_totales) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
+                                                        $stmt = sqlsrv_query($conn, $sql);
+
+                                                        if ($stmt === false) {
+                                                            die(print_r(sqlsrv_errors(), true));
+                                                        }
+                                                        echo "
                                                         <table class='table'>
                                                         <tr>
                                                         <th>Continente</th>
                                                         <th>Total de infectados</th>  
                                                         </tr>";
-                                                    while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                                        echo "<tr>";
-                                                        echo "<td>" . $row['Continente'] . "</td>";
-                                                        echo "<td>" . $row['Total'] . "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                    echo "</table>";
-                                                    ?>                                                   
-                                                </div>     
+                                                        while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['Continente'] . "</td>";
+                                                            echo "<td>" . $row['Total'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                        echo "</table>";
+                                                        ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!-- Tabs content -->
                                         </div>
@@ -268,9 +302,11 @@ if ($conn) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+
+                                <!--SECOND CARD-->
+                                <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title">Fallecidos en Suramérica</h1>
+                                        <h1 class="card-title">Vacunados</h1>
                                         <p class="card-text">
                                             This is a wider card with supporting text below as a natural lead-in to additional
                                             content. This content is a little bit longer.
@@ -278,45 +314,54 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body">
+                                    <div class="card-body" style="height: 33rem">
                                         <div class="container">
-                                            <ul class="nav nav-tabs mb-3" id="ex2" role="tablist">
+                                            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
-                                                    <a class="nav-link active" id="ex2-tab-1" data-mdb-toggle="tab" href="#ex2-tabs-1" role="tab"
-                                                       aria-controls="ex2-tab-1" aria-selected="true">Gráfico</a>
+                                                    <a class="nav-link active" id="ex1-tab-1-b" data-mdb-toggle="tab" href="#ex1-tabs-1-b" role="tab"
+                                                       aria-controls="ex1-tabs-1-b" aria-selected="true">Tab 1</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
-                                                    <a class="nav-link" id="ex2-tab-2" data-mdb-toggle="tab" href="#ex2-tabs-2" role="tab"
-                                                       aria-controls="ex2-tab-2" aria-selected="false">Tabla</a>
-                                                </li>                                              
+                                                    <a class="nav-link" id="ex1-tab-2-b" data-mdb-toggle="tab" href="#ex1-tabs-2-b" role="tab"
+                                                       aria-controls="ex1-tabs-2-b" aria-selected="false">Tab 2</a>
+                                                </li>
                                             </ul>
                                             <!-- Tabs navs -->
                                             <!-- Tabs content -->
-                                            <div class="tab-content" id="ex2-content">
-                                                <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel"
-                                                     aria-labelledby="ex2-tab-1">   
-                                                    <canvas id="myChart2" width="100" height="100"></canvas>
-                                                </div>                                               
-                                                <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
-                                                    <?php
-                                                    $sql2 = "select Pais, Registro_M.Total_muertes/10 as Fallecidos, Registro_M.Fecha as Hasta from Registro_M where Registro_M.Continente = 'South America' and Registro_M.Pais <> 'Falkland Islands' and Registro_M.Fecha like '%2021-10-12%' group by Registro_M.Pais, Registro_M.Total_muertes, Registro_M.Fecha";
-                                                    $stmt2 = sqlsrv_query($conn, $sql2);
+                                            <div class="tab-content" id="ex1-content-b">
+                                                <div class="tab-pane fade show active" id="ex1-tabs-1-b" role="tabpanel"
+                                                     aria-labelledby="ex1-tab-1-b">
+                                                    <div class="scrollbar scrollbar-primary">
+                                                        <div class="force-overflow"></div>
+                                                    </div>
+                                                    <!--Tab 1 content-->
+                                                    <div class="card-body" id="tab1Body-b">
+                                                        <canvas id="myChart2" width="100" height="100"></canvas>
+                                                    </div>
 
-                                                    echo "
+                                                </div>
+                                                <div class="tab-pane fade" id="ex1-tabs-2-b" role="tabpanel" aria-labelledby="ex1-tab-2-b">
+                                                    <div class="card-body" id="tab2Body-b">
+                                                        <?php
+                                                        $sql2 = "select Pais, Registro_M.Total_muertes/10 as Fallecidos, Registro_M.Fecha as Hasta from Registro_M where Registro_M.Continente = 'South America' and Registro_M.Pais <> 'Falkland Islands' and Registro_M.Fecha like '%2021-10-12%' group by Registro_M.Pais, Registro_M.Total_muertes, Registro_M.Fecha";
+                                                        $stmt2 = sqlsrv_query($conn, $sql2);
+
+                                                        echo "
                                                         <table class='table'>
                                                         <tr>
                                                         <th>País</th>
                                                         <th>Total de fallecidos</th>  
                                                         </tr>";
-                                                    while ($row = sqlsrv_fetch_Array($stmt2, SQLSRV_FETCH_ASSOC)) {
-                                                        echo "<tr>";
-                                                        echo "<td>" . $row['Pais'] . "</td>";
-                                                        echo "<td>" . $row['Fallecidos'] . "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                    echo "</table>";
-                                                    ?>
-                                                </div>     
+                                                        while ($row = sqlsrv_fetch_Array($stmt2, SQLSRV_FETCH_ASSOC)) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['Pais'] . "</td>";
+                                                            echo "<td>" . $row['Fallecidos'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                        echo "</table>";
+                                                        ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!-- Tabs content -->
                                         </div>
@@ -334,9 +379,11 @@ if ($conn) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+
+                                <!--THIRD CARD-->
+                                <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title">Vacunados x millón en Colombia durante el mes de septiembre</h1>
+                                        <h1 class="card-title">Vacunados</h1>
                                         <p class="card-text">
                                             This is a wider card with supporting text below as a natural lead-in to additional
                                             content. This content is a little bit longer.
@@ -344,47 +391,56 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body">
+                                    <div class="card-body" style="height: 33rem">
                                         <div class="container">
-                                            <ul class="nav nav-tabs mb-3" id="ex3" role="tablist">
+                                            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
-                                                    <a class="nav-link active" id="ex3-tab-1" data-mdb-toggle="tab" href="#ex3-tabs-1" role="tab"
-                                                       aria-controls="ex3-tab-1" aria-selected="true">Gráfico</a>
+                                                    <a class="nav-link active" id="ex1-tab-1-c" data-mdb-toggle="tab" href="#ex1-tabs-1-c" role="tab"
+                                                       aria-controls="ex1-tabs-1-c" aria-selected="true">Tab 1</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
-                                                    <a class="nav-link" id="ex3-tab-2" data-mdb-toggle="tab" href="#ex3-tabs-2" role="tab"
-                                                       aria-controls="ex3-tab-2" aria-selected="false">Tabla</a>
-                                                </li>                                              
+                                                    <a class="nav-link" id="ex1-tab-2-c" data-mdb-toggle="tab" href="#ex1-tabs-2-c" role="tab"
+                                                       aria-controls="ex1-tabs-2-c" aria-selected="false">Tab 2</a>
+                                                </li>
                                             </ul>
                                             <!-- Tabs navs -->
                                             <!-- Tabs content -->
-                                            <div class="tab-content" id="ex3-content">
-                                                <div class="tab-pane fade show active" id="ex3-tabs-1" role="tabpanel"
-                                                     aria-labelledby="ex3-tab-1">   
-                                                    <canvas id="myChart3" width="100" height="100"></canvas>
-                                                </div>                                               
-                                                <div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
-                                                    <?php
-                                                    $sql3 = "select Pais, cast(Diafecha as nchar(50)) as fecha,sum(V_por_millon_S/10000) as vacunados from Vacunas where Vacunas.V_por_millon_S/10000 < 1 and Vacunas.Diafecha like '%-09-%' and Vacunas.Pais = 'Colombia' group by Pais, Diafecha";
-                                                    $stmt3 = sqlsrv_query($conn, $sql3);
+                                            <div class="tab-content" id="ex1-content-c">
+                                                <div class="tab-pane fade show active" id="ex1-tabs-1-c" role="tabpanel"
+                                                     aria-labelledby="ex1-tab-1-c">
+                                                    <div class="scrollbar scrollbar-primary">
+                                                        <div class="force-overflow"></div>
+                                                    </div>
+                                                    <!--Tab 1 content-->
+                                                    <div class="card-body" id="tab1Body-c">
+                                                        <canvas id="myChart3" width="100" height="100"></canvas>
+                                                    </div>
 
-                                                    echo "
+                                                </div>
+                                                <div class="tab-pane fade" id="ex1-tabs-2-c" role="tabpanel" aria-labelledby="ex1-tab-2-c">
+                                                    <div class="card-body" id="tab2Body-c">
+                                                        <?php
+                                                        $sql3 = "select Pais, cast(Diafecha as nchar(50)) as fecha,sum(V_por_millon_S/10000) as vacunados from Vacunas where Vacunas.V_por_millon_S/10000 < 1 and Vacunas.Diafecha like '%-09-%' and Vacunas.Pais = 'Colombia' group by Pais, Diafecha";
+                                                        $stmt3 = sqlsrv_query($conn, $sql3);
+
+                                                        echo "
                                                         <table class='table'>
                                                         <tr>
                                                         <th>País</th>
                                                         <th>Fecha</th>
                                                         <th># vacunados por millón</th>
                                                         </tr>";
-                                                    while ($row = sqlsrv_fetch_Array($stmt3, SQLSRV_FETCH_ASSOC)) {
-                                                        echo "<tr>";
-                                                        echo "<td>" . $row['Pais'] . "</td>";
-                                                        echo "<td>" . $row['fecha'] . "</td>";
-                                                        echo "<td>" . $row['vacunados'] . "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                    echo "</table>";
-                                                    ?>
-                                                </div>     
+                                                        while ($row = sqlsrv_fetch_Array($stmt3, SQLSRV_FETCH_ASSOC)) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['Pais'] . "</td>";
+                                                            echo "<td>" . $row['fecha'] . "</td>";
+                                                            echo "<td>" . $row['vacunados'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                        echo "</table>";
+                                                        ?>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!-- Tabs content -->
                                         </div>
@@ -408,87 +464,146 @@ if ($conn) {
                 </div>
             </div>
         </main>
+
+
+        <script>
+
+            document.getElementById("testB").onClick = function () {
+                changeLanguage(0)
+            };
+
+            function changeContinent(cont) {
+
+                var code = ""
+
+                switch (cont) {
+                    default: //North America
+                        code = ""
+                        break;
+                    case 1: //South America
+                        code = ""
+                        break;
+                    case 1: //Europe
+                        code = ""
+                        break;
+                    case 1: //Asia
+                        code = ""
+                        break;
+                    case 1: //Africa
+                        code = ""
+                        break;
+                    case 1: //Oceania
+                        code = ""
+                        break;
+                }
+                document.getElementById("tab1Body").innerHTML = code;
+            }
+
+
+            //Función cambiar idioma
+            function changeLanguage(lang) {
+                switch (lang) {
+                    default: //English
+                        welcomeT = "Welcome!";
+                        langB = "Change language"
+                        welcomeBodyT = "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        break;
+                    case 1: //Spanish
+                        welcomeT = "¡Bienvenid@!"
+                        langB = "Cambiar idioma"
+                        welcomeBodyT = "Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y constituir la mayor parte del contenido de la tarjeta."
+                        break;
+                    case 2: //German
+                        welcomeT = "Herzlich willkommen!"
+                        langB = "Sprache ändern"
+                        welcomeBodyT = "Einige kurze Beispieltexte, die auf dem Kartentitel aufbauen und den Großteil des Karteninhalts ausmachen."
+                }
+
+                document.getElementById("welcomeT").innerHTML = welcomeT;
+                document.getElementById("welcomeBodyT").innerHTML = welcomeBodyT;
+                document.getElementById("langB").innerHTML = "<i class='fas fa-globe'></i> " + langB;
+            }
+        </script>
+
+
         <!-- MDB -->
         <script type="text/javascript" src="js/mdb.min.js"></script>
         <!-- Custom scripts -->
         <script type="text/javascript" src="js/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
-
-    <script src="js/chart.min.js"></script>
-
+<script src="js/chart.min.js"></script>
     <script>
-        var ctx = document.getElementById('myChart').getContext("2d");
-        ctx.canvas.width = 50;
-        ctx.canvas.height = 50;
-        var myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
-                datasets: [{
-                        data: [611182330,
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
+                    datasets: [{
+                            data: [611182330,
                                 536038560,
                                 380116970,
                                 2131430,
                                 84008330,
                                 773554090
                             ],
-                        backgroundColor: [
-                            'rgba(255, 99, 132)',
-                            'rgba(54, 162, 235)',
-                            'rgba(255, 206, 86)',
-                            'rgba(75, 192, 192)',
-                            'rgba(153, 102, 255)',
-                            'rgba(255, 159, 64)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-            },
-            options: {
-                animation: {
-                    duration:4000
+                            backgroundColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)',
+                                'rgba(75, 192, 192)',
+                                'rgba(153, 102, 255)',
+                                'rgba(255, 159, 64)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    animation: {
+                        duration: 4000
+                    }
                 }
-            }
-        });
+            });
     </script>
-    
+
     <script>
         var ctx2 = document.getElementById('myChart2');
         var myChart2 = new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: ['Argentina',                                         
-                        'Bolivia',                                           
-                        'Brazil',                                            
-                        'Chile',                                             
-                        'Colombia',                                          
-                        'Ecuador',                                           
-                        'Guyana',                                            
-                        'Paraguay',                                          
-                        'Peru',                                              
-                        'Suriname',                                          
-                        'Uruguay',                                           
-                        'Venezuela'],
+                labels: ['Argentina',
+                    'Bolivia',
+                    'Brazil',
+                    'Chile',
+                    'Colombia',
+                    'Ecuador',
+                    'Guyana',
+                    'Paraguay',
+                    'Peru',
+                    'Suriname',
+                    'Uruguay',
+                    'Venezuela'],
                 datasets: [{
                         data: [115547,
-                                18806,
-                                601398,
-                                37574,
-                                126692,
-                                32848,
-                                848,
-                                16207,
-                                199727,
-                                974,
-                                6064,
-                                4634],
+                            18806,
+                            601398,
+                            37574,
+                            126692,
+                            32848,
+                            848,
+                            16207,
+                            199727,
+                            974,
+                            6064,
+                            4634],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -527,29 +642,29 @@ if ($conn) {
                     }
                 },
                 animation: {
-                    duration:4000
+                    duration: 4000
                 },
                 indexAxis: 'y'
             }
         });
     </script>
-    
+
     <script>
         var ctx3 = document.getElementById('myChart3');
         var myChart3 = new Chart(ctx3, {
             type: 'line',
             data: {
-                labels: ['Semana 1',                                         
-                        'Semana 2',                                           
-                        'Semana 3',                                            
-                        'Semana 4',                                             
-                        'Semana 5'],
+                labels: ['Semana 1',
+                    'Semana 2',
+                    'Semana 3',
+                    'Semana 4',
+                    'Semana 5'],
                 datasets: [{
                         data: [1.0723,
-                               2.7238,
-                               3.9587,
-                               5.2066,
-                               6.803],
+                            2.7238,
+                            3.9587,
+                            5.2066,
+                            6.803],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -574,13 +689,13 @@ if ($conn) {
                     }
                 },
                 animation: {
-                    duration:4000
+                    duration: 4000
                 }
             }
         });
     </script>
-    
-    
-  
+
+
+
 
 </html>
