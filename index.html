@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/chart.min.js"></script>
 </head>
 
 <body>
@@ -49,8 +50,8 @@
                   <div class="dropdown">
                     <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-globe"></i> Cambiar idioma</a>
-
+                      <i class="fas fa-globe"></i> Cambiar idioma
+                    </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
                       <a class="dropdown-item" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
@@ -217,7 +218,7 @@
                     <div class="tab-content" id="ex1-content">
                       <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel"
                         aria-labelledby="ex1-tab-1">
-                        Tab 1 content
+                        <canvas id="myChart" width="100" height="100"></canvas>
                       </div>
                       <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                         Tab 2 content
@@ -252,5 +253,34 @@
   <!-- Custom scripts -->
   <script type="text/javascript" src="js/script.js"></script>
 </body>
-
+<script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Europa', 'América norte', 'África', 'Oceanía', 'Asia', 'América del sur'],
+                datasets: [{
+                        label: 'V_por_millon_',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+            }
+        });
+    </script> 
 </html>
