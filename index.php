@@ -61,7 +61,6 @@ if ($conn) {
                                 <div class="col-md-6">
                                     <ul class="navbar-nav justify-content-center">
                                         <!-- Avatar --> 
-
                                         <div class="dropdown">
                                             <a class="btn btn-primary dropdown-toggle btn-lg" href="#" role="button" id="langB"
                                                data-mdb-toggle="dropdown" aria-expanded="false">
@@ -93,9 +92,6 @@ if ($conn) {
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3 d-md-none d-lg-block">
-
-
-
                         <section class="mt-5">
                             <!-- About -->
                             <div class="row">
@@ -209,7 +205,7 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body" style="height: 33rem">
+                                    <div class="card-body">
                                         <div class="container">
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
@@ -219,10 +215,6 @@ if ($conn) {
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
                                                        aria-controls="ex1-tabs-2" aria-selected="false">Tab 2</a>
-                                                </li>
-                                                <li class="nav-item" role="presentation">
-                                                    <a class="nav-link" id="ex1-tab-3" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab"
-                                                       aria-controls="ex1-tabs-3" aria-selected="false">Tab 3</a>
                                                 </li>
                                             </ul>
                                             <!-- Tabs navs -->
@@ -234,55 +226,101 @@ if ($conn) {
                                                         <div class="force-overflow"></div>
                                                     </div>
                                                     <!--Tab 1 content-->
-                                                    <!--Choose country-->
-                                                    <div class="dropdown">
-                                                        <a class="btn btn-link dropdown-toggle btn-lg" href="#" role="button" id="countryB"
-                                                           data-mdb-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fas fa-globe-americas"></i> Continente</a>
-                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                            <a class="dropdown-item" onclick="changeContinent(0)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Norte</a>
-                                                            <a class="dropdown-item" onclick="changeContinent(1)" href="javascript:void(0)"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;América del Sur</a>
-                                                            <a class="dropdown-item" onclick="changeContinent(2)" href="javascript:void(0)"><i class="fas fa-globe-europe"></i>&nbsp;&nbsp;Europa</a>
-                                                            <a class="dropdown-item" onclick="changeContinent(3)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Asia</a>
-                                                            <a class="dropdown-item" onclick="changeContinent(4)" href="javascript:void(0)"><i class="fas fa-globe-africa"></i>&nbsp;&nbsp;África</a>
-                                                            <a class="dropdown-item" onclick="changeContinent(5)" href="javascript:void(0)"><i class="fas fa-globe-asia"></i>&nbsp;&nbsp;Oceanía</a>
-                                                        </ul>
-                                                    </div> 
-
                                                     <div class="card-body" id="tab1Body">
-                                                        <p>ola</p>
+                                                        <!-- SUBTABS TAB1 -->
+                                                    <ul class="nav nav-tabs mb-3" id="ex1a" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a
+                                                        class="nav-link active"
+                                                        id="ex1-tab-1a"
+                                                        data-mdb-toggle="tab"
+                                                        href="#ex1-tabs-1a"
+                                                        role="tab"
+                                                        aria-controls="ex1-tabs-1a"
+                                                        aria-selected="true"
+                                                        >Tab 1</a
+                                                        >
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <a
+                                                        class="nav-link"
+                                                        id="ex1-tab-2a"
+                                                        data-mdb-toggle="tab"
+                                                        href="#ex1-tabs-2a"
+                                                        role="tab"
+                                                        aria-controls="ex1-tabs-2a"
+                                                        aria-selected="false"
+                                                        >Tab 2</a
+                                                        >
+                                                    </li>
+                                                    </ul>
+                                                    <!-- Tabs navs -->
+
+                                                    <!-- Tabs content -->
+                                                    <div class="tab-content" id="ex1-contenta">
+                                                    <div
+                                                        class="tab-pane fade show active"
+                                                        id="ex1-tabs-1a"
+                                                        role="tabpanel"
+                                                        aria-labelledby="ex1-tab-1a"
+                                                    >
+                                                        Tab 1A content
+                                                    </div>
+                                                    <div class="tab-pane fade" id="ex1-tabs-2a" role="tabpanel" aria-labelledby="ex1-tab-2a">
+                                                        Tab 1B content
+                                                    </div>
+                                                    </div>
+                                                    <!-- SubTabs 1 content -->
                                                     </div>
 
                                                     
                                                 </div>
                                                 <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
                                                     <div class="card-body" id="tab2Body">
-                                                        <canvas id="myChart" width="100" height="100"></canvas>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                                                    <div class="card-body" id="tab3Body">
-                                                        <?php
-                                                        $sql = "select Continente, sum(Casos_totales) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
-                                                        $stmt = sqlsrv_query($conn, $sql);
+                                                           <!-- SUBTABS TAB2 -->
+                                                    <ul class="nav nav-tabs mb-3" id="ex1b" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a
+                                                        class="nav-link active"
+                                                        id="ex1-tab-1b"
+                                                        data-mdb-toggle="tab"
+                                                        href="#ex1-tabs-1b"
+                                                        role="tab"
+                                                        aria-controls="ex1-tabs-1b"
+                                                        aria-selected="true"
+                                                        >Tab 1</a
+                                                        >
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <a
+                                                        class="nav-link"
+                                                        id="ex1-tab-2b"
+                                                        data-mdb-toggle="tab"
+                                                        href="#ex1-tabs-2b"
+                                                        role="tab"
+                                                        aria-controls="ex1-tabs-2b"
+                                                        aria-selected="false"
+                                                        >Tab 2</a
+                                                        >
+                                                    </li>
+                                                    </ul>
+                                                    <!-- Tabs navs -->
 
-                                                        if ($stmt === false) {
-                                                            die(print_r(sqlsrv_errors(), true));
-                                                        }
-                                                        echo "
-                                                        <table class='table'>
-                                                        <tr>
-                                                        <th>Continente</th>
-                                                        <th>Total de infectados</th>  
-                                                        </tr>";
-                                                        while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
-                                                            echo "<tr>";
-                                                            echo "<td>" . $row['Continente'] . "</td>";
-                                                            echo "<td>" . $row['Total'] . "</td>";
-                                                            echo "</tr>";
-                                                        }
-                                                        echo "</table>";
-                                                        ?>
+                                                    <!-- Tabs content -->
+                                                    <div class="tab-content" id="ex1-contentb">
+                                                    <div
+                                                        class="tab-pane fade show active"
+                                                        id="ex1-tabs-1b"
+                                                        role="tabpanel"
+                                                        aria-labelledby="ex1-tab-1b"
+                                                    >
+                                                        Tab 2A content
+                                                    </div>
+                                                    <div class="tab-pane fade" id="ex1-tabs-2b" role="tabpanel" aria-labelledby="ex1-tab-2b">
+                                                        Tab 2B content
+                                                    </div>
+                                                    </div>
+                                                    <!-- SubTabs 1 content -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -391,7 +429,7 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body" style="height: 33rem">
+                                    <div class="card-body">
                                         <div class="container">
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
@@ -468,34 +506,43 @@ if ($conn) {
 
         <script>
 
+
+            // Javascript to enable link to tab
+            var hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
+            if (hash) {
+                $('.nav-tabs a[href="#' + hash + '"]').tab('show');
+            } 
+
             document.getElementById("testB").onClick = function () {
-                changeLanguage(0)
+                changeLanguage(2)
             };
 
             function changeContinent(cont) {
 
-                var code = ""
+                var code="<p>das</p>"
+               
 
                 switch (cont) {
                     default: //North America
-                        code = ""
+                        code = "<p>Norteamérica</p>"
                         break;
                     case 1: //South America
-                        code = ""
+                        code = "<button type='button' class='btn btn-secondary'>Secondary</button>"
                         break;
-                    case 1: //Europe
-                        code = ""
+                    case 2: //Europe
+                        code = "<button type='button' class='btn btn-warning'>Warning</button>"
                         break;
-                    case 1: //Asia
-                        code = ""
+                    case 3: //Asia
+                        code = "<p>Hello</p>"
                         break;
-                    case 1: //Africa
-                        code = ""
+                    case 4: //Africa
+                        code = "<p>Africa</p>"
                         break;
-                    case 1: //Oceania
-                        code = ""
+                    case 5: //Oceania
+                        code = "<p>Oceania</p>"
                         break;
                 }
+                
                 document.getElementById("tab1Body").innerHTML = code;
             }
 

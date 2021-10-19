@@ -1,9 +1,6 @@
  body {
         background-color: #fafafa;
-        overflow-y: scroll; /* Show vertical scrollbar */
-        overflow-x: scroll; /* Show horizontal scrollbar */
       }
-
 
 
     
@@ -11,7 +8,7 @@
     #tab1Body{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      height: 500px;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;
@@ -23,7 +20,7 @@
     #tab2Body{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      height: auto;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;
@@ -35,7 +32,7 @@
     #tab3Body{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      max-height: 30rem;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;
@@ -71,7 +68,7 @@
     #tab1Body-c{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      height: auto;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;
@@ -83,7 +80,7 @@
     #tab2Body-c{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      max-height: 30rem;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;
