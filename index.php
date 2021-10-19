@@ -264,10 +264,27 @@ if ($conn) {
                                                         role="tabpanel"
                                                         aria-labelledby="ex1-tab-1a"
                                                     >
-                                                        Tab 1A content
+                                                        <canvas id="myChart" width="100" height="100"></canvas>
                                                     </div>
                                                     <div class="tab-pane fade" id="ex1-tabs-2a" role="tabpanel" aria-labelledby="ex1-tab-2a">
-                                                        Tab 1B content
+                                                        <?php
+                                                        $sql = "select Continente, sum(Casos_totales/10) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
+                                                        $stmt = sqlsrv_query($conn, $sql);
+
+                                                        echo "
+                                                        <table class='table'>
+                                                        <tr>
+                                                        <th>Continente</th>
+                                                        <th># de infectados</th>  
+                                                        </tr>";
+                                                        while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['Continente'] . "</td>";
+                                                            echo "<td>" . $row['Total'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                        echo "</table>";
+                                                        ?>
                                                     </div>
                                                     </div>
                                                     <!-- SubTabs 1 content -->
@@ -314,10 +331,27 @@ if ($conn) {
                                                         role="tabpanel"
                                                         aria-labelledby="ex1-tab-1b"
                                                     >
-                                                        Tab 2A content
+                                                        <canvas id="myChart4" width="100" height="100"></canvas>
                                                     </div>
                                                     <div class="tab-pane fade" id="ex1-tabs-2b" role="tabpanel" aria-labelledby="ex1-tab-2b">
-                                                        Tab 2B content
+                                                        <?php
+                                                        $sql4 = "select Continente, sum(Total_muertes/10) as Total from Registro_M where Registro_M.Continente <> '' and Registro_M.Fecha like '%2021-10-12%' group by Continente";
+                                                        $stmt4 = sqlsrv_query($conn, $sql4);
+
+                                                        echo "
+                                                        <table class='table'>
+                                                        <tr>
+                                                        <th>Continente</th>
+                                                        <th># de muertos</th>  
+                                                        </tr>";
+                                                        while ($row = sqlsrv_fetch_Array($stmt4, SQLSRV_FETCH_ASSOC)) {
+                                                            echo "<tr>";
+                                                            echo "<td>" . $row['Continente'] . "</td>";
+                                                            echo "<td>" . $row['Total'] . "</td>";
+                                                            echo "</tr>";
+                                                        }
+                                                        echo "</table>";
+                                                        ?>
                                                     </div>
                                                     </div>
                                                     <!-- SubTabs 1 content -->
@@ -742,6 +776,46 @@ if ($conn) {
         });
     </script>
 
+    <script>
+            var ctx4 = document.getElementById('myChart4');
+            var myChart4 = new Chart(ctx4, {
+                type: 'pie',
+                data: {
+                    labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
+                    datasets: [{
+                            data: [1253579,
+                                1087310,
+                                1161319,
+                                2412,
+                                214402,
+                                1146582
+                            ],
+                            backgroundColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)',
+                                'rgba(75, 192, 192)',
+                                'rgba(153, 102, 255)',
+                                'rgba(255, 159, 64)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    animation: {
+                        duration: 4000
+                    }
+                }
+            });
+    </script>
 
 
 
