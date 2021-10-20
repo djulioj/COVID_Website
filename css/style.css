@@ -8,7 +8,7 @@
     #tab1Body{
       overflow-x: auto;
       overflow-y: auto;
-      height: 500px;
+      max-height: 50rem;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;

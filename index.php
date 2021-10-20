@@ -197,8 +197,8 @@ if ($conn) {
                                 <!--FIRST CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title">Infectados</h1>
-                                        <p class="card-text">
+                                        <h1 class="card-title" id="c1t">Infectados</h1>
+                                        <p class="card-text" id="c1txt">
                                             This is a wider card with supporting text below as a natural lead-in to additional
                                             content. This content is a little bit longer.
                                         </p>
@@ -259,10 +259,7 @@ if ($conn) {
                                                     <!-- Tabs content -->
                                                     <div class="tab-content" id="ex1-contenta">
                                                     <div
-                                                        class="tab-pane fade show active"
-                                                        id="ex1-tabs-1a"
-                                                        role="tabpanel"
-                                                        aria-labelledby="ex1-tab-1a"
+                                                        class="tab-pane fade show active" id="ex1-tabs-1a" role="tabpanel" aria-labelledby="ex1-tab-1a"
                                                     >
                                                         <canvas id="myChart" width="100" height="100"></canvas>
                                                     </div>
@@ -366,7 +363,7 @@ if ($conn) {
                                     <div class="card-body">
                                         <div class="container">
                                             <div class="row">
-                                                <p class="note note-primary">
+                                                <p class="note note-primary" id="c1n">
                                                     <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                                     Cum doloremque officia laboriosam.
                                                 </p>
@@ -378,8 +375,8 @@ if ($conn) {
                                 <!--SECOND CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title">Vacunados</h1>
-                                        <p class="card-text">
+                                        <h1 class="card-title" id="c2t">Vacunados</h1>
+                                        <p class="card-text" id="c2txt">
                                             This is a wider card with supporting text below as a natural lead-in to additional
                                             content. This content is a little bit longer.
                                         </p>
@@ -443,7 +440,7 @@ if ($conn) {
                                     <div class="card-body">
                                         <div class="container">
                                             <div class="row">
-                                                <p class="note note-primary">
+                                                <p class="note note-primary" id="c2n">
                                                     <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                                     Cum doloremque officia laboriosam.
                                                 </p>
@@ -455,8 +452,8 @@ if ($conn) {
                                 <!--THIRD CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title">Vacunados</h1>
-                                        <p class="card-text">
+                                        <h1 class="card-title" id="c3t">Vacunados</h1>
+                                        <p class="card-text" id="c3txt">
                                             This is a wider card with supporting text below as a natural lead-in to additional
                                             content. This content is a little bit longer.
                                         </p>
@@ -522,7 +519,7 @@ if ($conn) {
                                     <div class="card-body">
                                         <div class="container">
                                             <div class="row">
-                                                <p class="note note-primary">
+                                                <p class="note note-primary" id="c3n">
                                                     <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                                     Cum doloremque officia laboriosam.
                                                 </p>
@@ -586,13 +583,17 @@ if ($conn) {
                 switch (lang) {
                     default: //English
                         welcomeT = "Welcome!";
-                        langB = "Change language"
-                        welcomeBodyT = "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        langB = "Change language";
+                        welcomeBodyT = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+                        c1t = "";
+                        c1txt = "";
+                        c1n = "";
+
                         break;
                     case 1: //Spanish
-                        welcomeT = "¡Bienvenid@!"
-                        langB = "Cambiar idioma"
-                        welcomeBodyT = "Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y constituir la mayor parte del contenido de la tarjeta."
+                        welcomeT = "¡Bienvenid@!";
+                        langB = "Cambiar idioma";
+                        welcomeBodyT = "Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y constituir la mayor parte del contenido de la tarjeta.";
                         break;
                     case 2: //German
                         welcomeT = "Herzlich willkommen!"
