@@ -17,6 +17,8 @@
       border-bottom-width: 1px;
     }
 
+  
+
     #tab2Body{
       overflow-x: auto;
       overflow-y: auto;
@@ -44,7 +46,7 @@
     #tab1Body-b{
       overflow-x: auto;
       overflow-y: auto;
-      height: 400px;
+      max-height: 100rem;
       border-top-style: solid;
       border-bottom-style: solid;
       border-top-color: #e6e6e6;

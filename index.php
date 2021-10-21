@@ -51,11 +51,9 @@ if ($conn) {
                                 <div class="col-md-5">
                                     <a class="navbar-brand">
                                         <img src="img/logo.png"
-                                             height="30" alt="" loading="lazy" />
+                                             height="40" alt="" loading="lazy" />
                                     </a>
                                 </div>
-
-
 
                                 <!--Iconos-->
                                 <div class="col-md-6">
@@ -67,9 +65,17 @@ if ($conn) {
                                                 <i class="fas fa-language fa-lg"></i> Cambiar idioma</a>
 
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item" onclick="changeLanguage(1)" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(1)" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsch</a>
                                                 <a class="dropdown-item" onclick="changeLanguage(0)" href="#"><i class="flag flag-uk"></i>&nbsp;&nbsp;English</a>
-                                                <a class="dropdown-item" onclick="changeLanguage(2)" href="#"><i class="flag flag-de"></i>&nbsp;&nbsp;Deutsh</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(2)" href="#"><i class="flag flag-es"></i>&nbsp;&nbsp;Español</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(3)" href="#"><i class="flag flag-fr"></i>&nbsp;&nbsp;Français</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(4)" href="#"><i class="flag flag-it"></i>&nbsp;&nbsp;Italiano</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(5)" href="#"><i class="flag flag-pt"></i>&nbsp;&nbsp;Português</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(6)" href="#"><i class="flag flag-ru"></i>&nbsp;&nbsp;русский</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(7)" href="#"><i class="flag flag-ae"></i>&nbsp;&nbsp;عرب</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(8)" href="#"><i class="flag flag-jp"></i>&nbsp;&nbsp;日本</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(9)" href="#"><i class="flag flag-kr"></i>&nbsp;&nbsp;한국인</a>
+                                                <a class="dropdown-item" onclick="changeLanguage(10)" href="#"><i class="flag flag-cn"></i>&nbsp;&nbsp;简体中文</a>
                                                 <!--  <li><a class="dropdown-item" href="#">Español</a></li>
                                                   <li><a class="dropdown-item" href="#">English</a></li>
                                                   <li><a class="dropdown-item" href="#">Deutsch</a></li> -->
@@ -102,20 +108,20 @@ if ($conn) {
                                 <div class="col-md-9">
                                     <ul class="ml-0 pl-1 mt-1 list-unstyled">
                                         <li>
-                                            <p class="ml-3 text-dark mb-0 mt-1">
+                                            <p class="ml-3 text-dark mb-0 mt-1" id="aboutT">
                                                 <strong>Acerca de</strong>
                                             </p>
                                         </li>
                                         <li>
-                                            <span class="ml-3 text-dark">Página web</span>
+                                            <span class="ml-3 text-dark" id="aboutTxt">Desarrollado por estudiantes de Uninorte. 2021.</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
                             <!-- Suggestions -->
-                            <div>
-                                <small>Desarrollado por</small>
+                            <div id="byT">
+                                <small>Integrantes del equipo</small>
                             </div>
 
                             <!-- Suggested users -->
@@ -186,10 +192,9 @@ if ($conn) {
                                 <!--Welcome Card-->
                                 <div id=tarjeta class="card border border-primary shadow-0 mb-3">
                                     <div class="card-body text-primary">
-                                        <h5 id=welcomeT class="card-title">¡Bienvenid@!</h5>
+                                        <h5 id=welcomeT class="card-title">¡Bienvenidx!</h5>
                                         <p id=welcomeBodyT class="card-text">
-                                            Some quick example text to build on the card title and make up the bulk of the
-                                            card's content.
+                                        En Covid-DB encontrarás información relacionada con la enfermedad Covid-19, con datos recopilados hasta mediados del mes de octubre de 2021. Aquí hallarás gráficos estadísticos y tablas que te permitirán comprender de un modo más sencillo la información suministrada.<br>Datos tomados de Our World in Data.
                                         </p>
                                     </div>
                                 </div>
@@ -197,10 +202,9 @@ if ($conn) {
                                 <!--FIRST CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title" id="c1t">Infectados</h1>
+                                        <h1 class="card-title" id="c1t">Casos y muertes globales</h1>
                                         <p class="card-text" id="c1txt">
-                                            This is a wider card with supporting text below as a natural lead-in to additional
-                                            content. This content is a little bit longer.
+                                        Esta sección inicial cuenta con 2 gráficos y brinda información de los continentes referente al total de infectados y fallecidos a nivel global.
                                         </p>
                                     </div>
 
@@ -210,11 +214,11 @@ if ($conn) {
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
-                                                       aria-controls="ex1-tabs-1" aria-selected="true">Tab 1</a>
+                                                       aria-controls="ex1-tabs-1" aria-selected="true">Casos</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
-                                                       aria-controls="ex1-tabs-2" aria-selected="false">Tab 2</a>
+                                                       aria-controls="ex1-tabs-2" aria-selected="false">Muertes</a>
                                                 </li>
                                             </ul>
                                             <!-- Tabs navs -->
@@ -238,7 +242,7 @@ if ($conn) {
                                                         role="tab"
                                                         aria-controls="ex1-tabs-1a"
                                                         aria-selected="true"
-                                                        >Tab 1</a
+                                                        ><i class="fas fa-chart-pie fa-lg"></i> Gráfico</a
                                                         >
                                                     </li>
                                                     <li class="nav-item" role="presentation">
@@ -250,7 +254,7 @@ if ($conn) {
                                                         role="tab"
                                                         aria-controls="ex1-tabs-2a"
                                                         aria-selected="false"
-                                                        >Tab 2</a
+                                                        ><i class="fas fa-table fa-lg"></i> Tabla</a
                                                         >
                                                     </li>
                                                     </ul>
@@ -302,7 +306,7 @@ if ($conn) {
                                                         role="tab"
                                                         aria-controls="ex1-tabs-1b"
                                                         aria-selected="true"
-                                                        >Tab 1</a
+                                                        ><i class="fas fa-chart-pie fa-lg"></i> Gráfico</a
                                                         >
                                                     </li>
                                                     <li class="nav-item" role="presentation">
@@ -314,7 +318,7 @@ if ($conn) {
                                                         role="tab"
                                                         aria-controls="ex1-tabs-2b"
                                                         aria-selected="false"
-                                                        >Tab 2</a
+                                                        ><i class="fas fa-table fa-lg"></i> Tabla</a
                                                         >
                                                     </li>
                                                     </ul>
@@ -383,16 +387,16 @@ if ($conn) {
                                     </div>
 
                                     <!-- Tab navs -->
-                                    <div class="card-body" style="height: 33rem">
+                                    <div class="card-body">
                                         <div class="container">
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link active" id="ex1-tab-1-b" data-mdb-toggle="tab" href="#ex1-tabs-1-b" role="tab"
-                                                       aria-controls="ex1-tabs-1-b" aria-selected="true">Tab 1</a>
+                                                       aria-controls="ex1-tabs-1-b" aria-selected="true"><i class='fas fa-chart-bar fa-lg'></i> Gráfico</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="ex1-tab-2-b" data-mdb-toggle="tab" href="#ex1-tabs-2-b" role="tab"
-                                                       aria-controls="ex1-tabs-2-b" aria-selected="false">Tab 2</a>
+                                                       aria-controls="ex1-tabs-2-b" aria-selected="false"><i class="fas fa-table fa-lg"></i> Tabla</a>
                                                 </li>
                                             </ul>
                                             <!-- Tabs navs -->
@@ -465,11 +469,11 @@ if ($conn) {
                                             <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link active" id="ex1-tab-1-c" data-mdb-toggle="tab" href="#ex1-tabs-1-c" role="tab"
-                                                       aria-controls="ex1-tabs-1-c" aria-selected="true">Tab 1</a>
+                                                       aria-controls="ex1-tabs-1-c" aria-selected="true"><i class="fas fa-chart-line fa-lg"></i> Gráfico</a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
                                                     <a class="nav-link" id="ex1-tab-2-c" data-mdb-toggle="tab" href="#ex1-tabs-2-c" role="tab"
-                                                       aria-controls="ex1-tabs-2-c" aria-selected="false">Tab 2</a>
+                                                       aria-controls="ex1-tabs-2-c" aria-selected="false"><i class="fas fa-table fa-lg"></i> Tabla</a>
                                                 </li>
                                             </ul>
                                             <!-- Tabs navs -->
@@ -544,66 +548,407 @@ if ($conn) {
                 $('.nav-tabs a[href="#' + hash + '"]').tab('show');
             } 
 
-            document.getElementById("testB").onClick = function () {
-                changeLanguage(2)
-            };
-
-            function changeContinent(cont) {
-
-                var code="<p>das</p>"
-               
-
-                switch (cont) {
-                    default: //North America
-                        code = "<p>Norteamérica</p>"
-                        break;
-                    case 1: //South America
-                        code = "<button type='button' class='btn btn-secondary'>Secondary</button>"
-                        break;
-                    case 2: //Europe
-                        code = "<button type='button' class='btn btn-warning'>Warning</button>"
-                        break;
-                    case 3: //Asia
-                        code = "<p>Hello</p>"
-                        break;
-                    case 4: //Africa
-                        code = "<p>Africa</p>"
-                        break;
-                    case 5: //Oceania
-                        code = "<p>Oceania</p>"
-                        break;
-                }
-                
-                document.getElementById("tab1Body").innerHTML = code;
-            }
-
 
             //Función cambiar idioma
             function changeLanguage(lang) {
                 switch (lang) {
                     default: //English
+                        //Left section
+                        aboutT = "About";
+                        aboutTxt = "Developed by Uninorte students. 2021.";
+                        byT = "Team members";
+                        //Welcome card
                         welcomeT = "Welcome!";
                         langB = "Change language";
-                        welcomeBodyT = "Some quick example text to build on the card title and make up the bulk of the card's content.";
-                        c1t = "";
-                        c1txt = "";
+                        welcomeBodyT = "In Covid-DB you will find information related to the Covid-19 disease, with data collected until mid-October 2021. Here you will find statistical graphs and tables that will allow you to understand the information provided in a more simple way. <br> Data taken from Our World in Data.";
+                        //Card 1
+                        c1t = "Global cases and deaths";
+                        c1txt = "This initial section has 2 graphs and provides information on the continents regarding the total number of infected and deceased globally.";
                         c1n = "";
+                        c1tab1 = "Cases";
+                        c1tab1a = "Graph";
+                        c1tab1b = "Graph";
+                        c1tab2 = "Deaths";
+                        c1tab2a = "Table";
+                        c1tab2b = "Table";
+                        // Card 2
+                        c2t = "Deaths in South America";
+                        c2txt = "This second section has a graph that provides more detailed information on the number of deaths caused by Covid-19 in South America. In addition, in the second tab you can find the table with the data represented in the graph. ";
+                        c2n = "";
+                        c2tab1 = "Chart";
+                        c2tab2 = "Table";
+                        // Card 3
+                        c3t = "Vaccinated in Colombia";
+                        c3txt = "This last section has a graph that provides information about the number of vaccinated in Colombia during the month of September 2021. In addition, in the second tab you can find the table with the data represented in the graph in more detail. ";
+                        c3n = "";
+                        c3tab1 = "Chart";
+                        c3tab2 = "Table";
+                        break;
 
-                        break;
-                    case 1: //Spanish
-                        welcomeT = "¡Bienvenid@!";
+                    case 2: //Spanish
+                        //Left section
+                        aboutT = "Acerca de";
+                        aboutTxt = "Desarrollado por estudiantes de Uninorte. 2021.";
+                        byT = "Integrantes del equipo";
+                        //Welcome card
+                        welcomeT = "¡Bienvenidx!";
                         langB = "Cambiar idioma";
-                        welcomeBodyT = "Algún texto de ejemplo rápido para construir sobre el título de la tarjeta y constituir la mayor parte del contenido de la tarjeta.";
+                        welcomeBodyT = "En Covid-DB encontrarás información relacionada con la enfermedad Covid-19, con datos recopilados hasta mediados del mes de octubre de 2021. Aquí hallarás gráficos estadísticos y tablas que te permitirán comprender de un modo más sencillo la información suministrada.<br>Datos tomados de Our World in Data.";
+                        //Card 1
+                        c1t = "Casos y muertes globales";
+                        c1txt = "Esta sección inicial cuenta con 2 gráficos y brinda información de los continentes referente al total de infectados y fallecidos a nivel global.";
+                        c1n = "";
+                        c1tab1 = "Casos";
+                        c1tab1a = "Gráfico";
+                        c1tab1b = "Gráfico";
+                        c1tab2 = "Muertes";
+                        c1tab2a = "Tabla";
+                        c1tab2b = "Tabla";
+                        //Card 2
+                        c2t = "Muertes en América del Sur";
+                        c2txt = "Esta segunda sección cuenta con un gráfico que brinda información más a detalle del número de muertes que ha dejado el Covid-19 en América del Sur. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico.";
+                        c2n = "";
+                        c2tab1 = "Gráfico";
+                        c2tab2 = "Tabla";
+                        //Card 3
+                        c3t = "Vacunados en Colombia";
+                        c3txt = "Esta última sección cuenta con un gráfico que brinda información acerca del número de vacunados en Colombia durante el mes de septiembre de 2021. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico de manera más detallada.";
+                        c3n = "";
+                        c3tab1 = "Gráfico";
+                        c3tab2 = "Tabla";
                         break;
-                    case 2: //German
-                        welcomeT = "Herzlich willkommen!"
-                        langB = "Sprache ändern"
-                        welcomeBodyT = "Einige kurze Beispieltexte, die auf dem Kartentitel aufbauen und den Großteil des Karteninhalts ausmachen."
+
+                    case 1: //German
+                        //Left section
+                        aboutT = "Über";
+                        aboutTxt = "Entwickelt von Uninorte-Studenten. 2021.";
+                        byT = "Teammitglieder";
+                        //Welcome card
+                        welcomeT = "Willkommen!";
+                        langB = "Sprache ändern";
+                        welcomeBodyT = "In Covid-DB finden Sie Informationen zur Covid-19-Erkrankung mit Daten, die bis Mitte Oktober 2021 gesammelt wurden. Hier finden Sie statistische Grafiken und Tabellen, die Ihnen ein einfacheres Verständnis der bereitgestellten Informationen ermöglichen . <br> Daten aus unserer Welt in Daten.";
+                        //Karte 1
+                        c1t = "Globale Fälle und Todesfälle";
+                        c1txt = "Dieser erste Abschnitt enthält 2 Grafiken und enthält Informationen zu den Kontinenten bezüglich der Gesamtzahl der Infizierten und Verstorbenen weltweit.";
+                        c1n = "";
+                        c1tab1 = "Fälle";
+                        c1tab1a = "Grafik";
+                        c1tab1b = "Grafik";
+                        c1tab2 = "Todesfälle";
+                        c1tab2a = "Tabelle";
+                        c1tab2b = "Tabelle";
+                        // Karte 2
+                        c2t = "Todesfälle in Südamerika";
+                        c2txt = "Dieser zweite Abschnitt enthält eine Grafik, die detailliertere Informationen über die Anzahl der Todesfälle durch Covid-19 in Südamerika bietet. Außerdem finden Sie im zweiten Tab die Tabelle mit den in der Grafik dargestellten Daten. ";
+                        c2n = "";
+                        c2tab1 = "Diagramm";
+                        c2tab2 = "Tabelle";
+                        // Karte 3
+                        c3t = "In Kolumbien geimpft";
+                        c3txt = "Dieser letzte Abschnitt enthält eine Grafik, die Informationen über die Anzahl der Geimpften in Kolumbien im September 2021 enthält. Außerdem finden Sie auf der zweiten Registerkarte die Tabelle mit den in der Grafik ausführlicher dargestellten Daten. " ;
+                        c3n = "";
+                        c3tab1 = "Diagramm";
+                        c3tab2 = "Tabelle";
+                    break;
+
+                    case 3: //French
+                        //Left section
+                        aboutT = "À propos de";
+                        aboutTxt = "Développé par les étudiants d'Uninorte. 2021.";
+                        byT = "Membres de l'équipe";
+                        //Welcome card
+                        welcomeT = "Bienvenue!";
+                        langB = "Changer de langue";
+                        welcomeBodyT = "Dans Covid-DB, vous trouverez des informations liées à la maladie Covid-19, avec des données collectées jusqu'à la mi-octobre 2021. Vous trouverez ici des graphiques et des tableaux statistiques qui vous permettront de comprendre les informations fournies de manière plus simple . <br> Données extraites de Notre monde en données.";
+                        //Card 1
+                        c1t = "Cas et décès dans le monde" ;
+                        c1txt = "Cette section initiale comporte 2 graphiques et fournit des informations sur les continents concernant le nombre total de personnes infectées et décédées dans le monde.";
+                        c1n = "" ;
+                        c1tab1 = "Cas" ;
+                        c1tab1a = "Graphique" ;
+                        c1tab1b = "Graphique" ;
+                        c1tab2 = "Décès" ;
+                        c1tab2a = "Tableau" ;
+                        c1tab2b = "Tableau" ;
+                        // Card 2
+                        c2t = "Décès en Amérique du Sud" ;
+                        c2txt = "Cette deuxième section contient un graphique qui fournit des informations plus détaillées sur le nombre de décès causés par Covid-19 en Amérique du Sud. De plus, dans le deuxième onglet, vous pouvez trouver le tableau avec les données représentées dans le graphique. ";
+                        c2n = "" ;
+                        c2tab1 = "Graphique" ;
+                        c2tab2 = "Tableau" ;
+                        // Card 3
+                        c3t = "Vacciné en Colombie" ;
+                        c3txt = "Cette dernière section contient un graphique qui fournit des informations sur le nombre de vaccinés en Colombie au cours du mois de septembre 2021. De plus, dans le deuxième onglet, vous pouvez trouver le tableau avec les données représentées dans le graphique plus en détail. " ;
+                        c3n = "" ;
+                        c3tab1 = "Graphique" ;
+                        c3tab2 = "Tableau" ;
+                        break;
+
+                    case 4: //Italian
+                        //Left section
+                        aboutT = "Di";
+                        aboutTxt = "Sviluppato dagli studenti Uninorte. 2021.";
+                        byT = "Membri del team";
+                        //Welcome card
+                        welcomeT = "Benvenuto!";
+                        langB = "Cambia lingua";
+                        welcomeBodyT = "In Covid-DB troverai le informazioni relative alla malattia Covid-19, con i dati raccolti fino a metà ottobre 2021. Qui troverai grafici e tabelle statistiche che ti permetteranno di comprendere le informazioni fornite in modo più semplice . <br> Dati presi da Our World in Data.";
+                        //Card 1
+                        c1t = "Casi e decessi globali";
+                        c1txt = "Questa sezione iniziale ha 2 grafici e fornisce informazioni sui continenti per quanto riguarda il numero totale di infetti e deceduti a livello globale.";
+                        c1n = "";
+                        c1tab1 = "Casi";
+                        c1tab1a = "Grafico";
+                        c1tab1b = "Grafico";
+                        c1tab2 = "Morte";
+                        c1tab2a = "Tabella";
+                        c1tab2b = "Tabella";
+                        // Card 2
+                        c2t = "Decessi in Sud America";
+                        c2txt = "Questa seconda sezione ha un grafico che fornisce informazioni più dettagliate sul numero di decessi causati da Covid-19 in Sud America. Inoltre, nella seconda scheda puoi trovare la tabella con i dati rappresentati nel grafico. ";
+                        c2n = "";
+                        c2tab1 = "Grafico";
+                        c2tab2 = "Tabella";
+                        // Card 3
+                        c3t = "Vaccinato in Colombia";
+                        c3txt = "Quest'ultima sezione ha un grafico che fornisce informazioni sul numero di vaccinati in Colombia durante il mese di settembre 2021. Inoltre, nella seconda scheda puoi trovare la tabella con i dati rappresentati nel grafico in modo più dettagliato. " ;
+                        c3n = "";
+                        c3tab1 = "Grafico";
+                        c3tab2 = "Tabella";
+                        break;
+                    
+                    case 5: //Portuguese
+                        //Left section
+                        aboutT = "Sobre";
+                        aboutTxt = "Desenvolvido por alunos da Uninorte. 2021.";
+                        byT = "Integrantes da equipe";
+                        //Welcome card
+                        welcomeT = "Bem-vindo!";
+                        langB = "Alterar idioma";
+                        welcomeBodyT = "No Covid-DB você encontrará informações relacionadas à doença Covid-19, com dados coletados até meados de outubro de 2021. Aqui você encontrará gráficos e tabelas estatísticas que permitirão compreender as informações prestadas de forma mais simples forma. <br> Dados retirados de Our World in Data. ";
+                        // Card 1
+                        c1t = "Casos e óbitos globais";
+                        c1txt = "Esta seção inicial possui 2 gráficos e fornece informações sobre os continentes em relação ao número total de infectados e falecidos globalmente.";
+                        c1n = "";
+                        c1tab1 = "Casos";
+                        c1tab1a = "Gráfico";
+                        c1tab1b = "Gráfico";
+                        c1tab2 = "Mortes";
+                        c1tab2a = "Tabela";
+                        c1tab2b = "Tabela";
+                        // Card 2
+                        c2t = "Mortes na América do Sul";
+                        c2txt = "Esta segunda seção possui um gráfico que fornece informações mais detalhadas sobre o número de mortes causadas pela Covid-19 na América do Sul. Além disso, na segunda aba você encontra a tabela com os dados representados no gráfico.";
+                        c2n = "";
+                        c2tab1 = "Gráfico";
+                        c2tab2 = "Tabela";
+                        // Card 3
+                        c3t = "Vacinado na Colômbia";
+                        c3txt = "Esta última seção contém um gráfico que fornece informações sobre o número de vacinados na Colômbia durante o mês de setembro de 2021. Além disso, na segunda aba você pode encontrar a tabela com os dados representados no gráfico com mais detalhes." ;
+                        c3n = "";
+                        c3tab1 = "Gráfico";
+                        c3tab2 = "Tabela";
+                        break;
+
+                    case 6: //Russian
+                        //Left section
+                        aboutT = "О";
+                        aboutTxt = "Разработано студентами Uninorte. 2021 г.";
+                        byT = "Члены команды";
+                        //Welcome card
+                        welcomeT = "Добро пожаловать!";
+                        langB = "Сменить язык";
+                        welcomeBodyT = "В Covid-DB вы найдете информацию, связанную с заболеванием Covid-19, с данными, собранными до середины октября 2021 года. Здесь вы найдете статистические графики и таблицы, которые позволят вам понять предоставленную информацию более простым способом. . <br> Данные взяты из нашего мира в данных. ";
+                        // Card 1
+                        c1t = "Глобальные случаи и смерти";
+                        c1txt = "Этот начальный раздел содержит 2 графика и предоставляет информацию по континентам относительно общего числа зараженных и умерших во всем мире.";
+                        c1n = "";
+                        c1tab1 = "Дела";
+                        c1tab1a = "График";
+                        c1tab1b = "График";
+                        c1tab2 = "Смерти";
+                        c1tab2a = "Таблица";
+                        c1tab2b = "Таблица";
+                        // Card 2
+                        c2t = "Смерти в Южной Америке";
+                        c2txt = "В этом втором разделе есть график, который предоставляет более подробную информацию о количестве смертей, вызванных Covid-19 в Южной Америке. Кроме того, во второй вкладке вы можете найти таблицу с данными, представленными на графике.";
+                        c2n = "";
+                        c2tab1 = "Диаграмма";
+                        c2tab2 = "Таблица";
+                        // Card 3
+                        c3t = "Вакцинирован в Колумбии";
+                        c3txt = "В этом последнем разделе есть график, который предоставляет информацию о количестве вакцинированных в Колумбии в течение сентября 2021 года. Кроме того, на второй вкладке вы можете найти таблицу с данными, представленными на графике более подробно.";
+                        c3n = "";
+                        c3tab1 = "Диаграмма";
+                        c3tab2 = "Таблица";
+                        break;
+
+                    case 7: //Arabic
+                        //Left section
+                        aboutT = "عن";
+                        aboutTxt = "تم تطويره بواسطة طلاب Uninorte. 2021.";
+                        byT = "أعضاء الفريق";
+                        //Welcome card
+                        welcomeT = "أهلا بك!";
+                        langB = "تغيير اللغة";
+                        welcomeBodyT = "ستجد في Covid-DB معلومات تتعلق بمرض Covid-19 ، مع البيانات التي تم جمعها حتى منتصف أكتوبر 2021. ستجد هنا الرسوم البيانية والجداول الإحصائية التي ستتيح لك فهم المعلومات المقدمة بطريقة أكثر بساطة. <br> البيانات مأخوذة من عالمنا في البيانات.";
+                        // Card 1
+                        c1t = "الحالات والوفيات العالمية" ;
+                        c1txt = "يحتوي هذا القسم الأولي على رسمين بيانيين ويقدم معلومات عن القارات فيما يتعلق بالعدد الإجمالي للمصابين والمتوفين على مستوى العالم.";
+                        c1n = "";
+                        c1tab1 = "الحالات" ;
+                        c1tab1a = "رسم بياني" ;
+                        c1tab1b = "رسم بياني";
+                        c1tab2 = "وفيات" ;
+                        c1tab2a = "جدول" ;
+                        c1tab2b = "جدول" ;
+                        // البطاقة 2
+                        c2t = "وفيات في أمريكا الجنوبية" ;
+                        c2txt = "يحتوي هذا القسم الثاني على رسم بياني يوفر معلومات أكثر تفصيلاً عن عدد الوفيات الناجمة عن Covid-19 في أمريكا الجنوبية. بالإضافة إلى ذلك ، في علامة التبويب الثانية ، يمكنك العثور على جدول بالبيانات الممثلة في الرسم البياني.";
+                        c2n = "";
+                        c2tab1 = "مخطط";
+                        c2tab2 = "جدول";
+                        // البطاقة 3
+                        c3t = "تم تلقيحها في كولومبيا";
+                        c3txt = "يحتوي هذا القسم الأخير على رسم بياني يوفر معلومات حول عدد الذين تم تطعيمهم في كولومبيا خلال شهر سبتمبر 2021. بالإضافة إلى ذلك ، في علامة التبويب الثانية ، يمكنك العثور على الجدول الذي يحتوي على البيانات الممثلة في الرسم البياني بمزيد من التفصيل.";
+                        c3n = "";
+                        c3tab1 = "مخطط";
+                        c3tab2 = "جدول";
+                        break;
+
+                    case 8: //Japanese
+                        //Left section
+                        aboutT = "だいたい";
+                        aboutTxt = "Uninorteの学生によって開発されました。 2021年。";
+                        byT = "チームメンバー";
+                        //Welcome card
+                        welcomeT = "ようこそ！";
+                        langB = "言語の変更";
+                        welcomeBodyT = "Covid-DBには、2021年10月中旬までに収集されたデータとともに、Covid-19病に関連する情報があります。ここには、より簡単な方法で提供される情報を理解できる統計グラフと表があります。 。<br>データで私たちの世界から取得したデータ。 ";
+                        //カード1
+                        c1t = "世界的な症例と死亡";
+                        c1txt = "この最初のセクションには2つのグラフがあり、世界の感染者と死亡者の総数に関する大陸に関する情報を提供します。";
+                        c1n = "";
+                        c1tab1 = "ケース";
+                        c1tab1a = "グラフ";
+                        c1tab1b = "グラフ";
+                        c1tab2 = "死";
+                        c1tab2a = "テーブル";
+                        c1tab2b = "テーブル";
+                        //カード2
+                        c2t = "南アメリカでの死";
+                        c2txt = "この2番目のセクションには、南米でCovid-19によって引き起こされた死亡者数に関する詳細情報を提供するグラフがあります。さらに、2番目のタブには、グラフで表されたデータを含む表があります。";
+                        c2n = "";
+                        c2tab1 = "チャート";
+                        c2tab2 = "テーブル";
+                        //カード3
+                        c3t = "コロンビアでワクチン接種";
+                        c3txt = "この最後のセクションには、2021年9月の間にコロンビアでワクチン接種された数に関する情報を提供するグラフがあります。さらに、2番目のタブで、グラフに表示されたデータを含む表をより詳細に見つけることができます。" ;
+                        c3n = "";
+                        c3tab1 = "チャート";
+                        c3tab2 = "テーブル";
+                        break;
+
+                    case 9: //Korean
+                        //Left section
+                        aboutT = "에 대한";
+                        aboutTxt = "Uninorte 학생들이 개발했습니다. 2021.";
+                        byT = "팀 멤버";
+                        //Welcome card
+                        welcomeT = "환영합니다!";
+                        langB = "언어 변경";
+                        welcomeBodyT = "Covid-DB에서는 2021년 10월 중순까지 수집된 데이터와 함께 Covid-19 질병과 관련된 정보를 찾을 수 있습니다. 여기에서 제공되는 정보를 보다 쉽게 ​​이해할 수 있는 통계 그래프와 표를 찾을 수 있습니다. . <br> 데이터의 세계에서 가져온 데이터.";
+                        //카드 1
+                        c1t = "글로벌 사례 및 사망";
+                        c1txt = "이 초기 섹션에는 2개의 그래프가 있으며 전 세계적으로 감염 및 사망자의 총 수에 관한 대륙 정보를 제공합니다.";
+                        c1n = "";
+                        c1tab1 = "케이스";
+                        c1tab1a = "그래프";
+                        c1tab1b = "그래프";
+                        c1tab2 = "죽음";
+                        c1tab2a = "표";
+                        c1tab2b = "표";
+                        // 카드 2
+                        c2t = "남아메리카의 사망";
+                        c2txt = "이 두 번째 섹션에는 남아메리카의 Covid-19로 인한 사망자 수에 대한 자세한 정보를 제공하는 그래프가 있습니다. 또한 두 번째 탭에서는 그래프에 표시된 데이터가 있는 표를 찾을 수 있습니다. ";
+                        c2n = "";
+                        c2tab1 = "차트";
+                        c2tab2 = "표";
+                        // 카드 3
+                        c3t = "콜롬비아에서 예방 접종";
+                        c3txt = "이 마지막 섹션에는 2021년 9월 한 달 동안 콜롬비아에서 예방 접종을 한 사람의 수에 대한 정보를 제공하는 그래프가 있습니다. 또한 두 번째 탭에서 그래프에 표시된 데이터가 있는 표를 더 자세히 찾을 수 있습니다. " ;
+                        c3n = "";
+                        c3tab1 = "차트";
+                        c3tab2 = "표";
+                        break;
+
+                    case 10: //Chinese
+                        //Left section
+                        aboutT = "关于";
+                        aboutTxt = "由 Uninorte 学生开发。 2021。";
+                        byT = "团队成员";
+                        //Welcome card
+                        welcomeT = "欢迎！";
+                        langB = "改变语言";
+                        welcomeBodyT = "在 Covid-DB 中，您会找到与 Covid-19 疾病相关的信息，收集的数据截至 2021 年 10 月中旬。在这里，您会找到统计图表和表格，让您能够以更简单的方式了解所提供的信息。 <br> 数据取自我们的数据世界。";
+                        //Card 1
+                        //卡片1
+                        c1t = "全球病例和死亡人数";
+                        c1txt = "这个初始部分有 2 个图表，并提供了有关全球感染和死亡总数的各大洲的信息。";
+                        c1n = "";
+                        c1tab1 = "案例";
+                        c1tab1a = "图表";
+                        c1tab1b = "图表";
+                        c1tab2 = "死亡人数";
+                        c1tab2a = "表格";
+                        c1tab2b = "表格";
+                        //卡片2
+                        c2t = "南美洲的死亡人数";
+                        c2txt = "这第二部分有一个图表，提供了有关南美洲 Covid-19 造成的死亡人数的更详细信息。此外，在第二个选项卡中，您可以找到包含图表中数据的表格。";
+                        c2n = "";
+                        c2tab1 = "图表";
+                        c2tab2 = "表格";
+                        //卡片3
+                        c3t = "在哥伦比亚接种过疫苗";
+                        c3txt = "最后一部分的图表提供了有关 2021 年 9 月哥伦比亚接种疫苗数量的信息。此外，在第二个选项卡中，您可以找到包含图表中更详细数据的表格。" ;
+                        c3n = "";
+                        c3tab1 = "图表";
+                        c3tab2 = "表格";
+                        break;
+                
                 }
 
+
+                //About
+                document.getElementById("aboutT").innerHTML = "<strong>"+aboutT+"</strong>";
+                document.getElementById("aboutTxt").innerHTML = aboutTxt;
+                document.getElementById("byT").innerHTML = "<small>"+byT+"</small>";
+                //Welcome card
                 document.getElementById("welcomeT").innerHTML = welcomeT;
                 document.getElementById("welcomeBodyT").innerHTML = welcomeBodyT;
-                document.getElementById("langB").innerHTML = "<i class='fas fa-globe'></i> " + langB;
+                document.getElementById("langB").innerHTML = "<i class='fas fa-language fa-lg'></i> " + langB;
+                //Card 1
+                document.getElementById("c1t").innerHTML = c1t;
+                document.getElementById("c1txt").innerHTML = c1txt;
+                document.getElementById("c1n").innerHTML = c1n;
+                document.getElementById("ex1-tab-1").innerHTML = c1tab1;
+                document.getElementById("ex1-tab-1a").innerHTML = "<i class='fas fa-chart-pie fa-lg'></i> " + c1tab1a;
+                document.getElementById("ex1-tab-1b").innerHTML = "<i class='fas fa-chart-pie fa-lg'></i> " + c1tab1b;
+                document.getElementById("ex1-tab-2").innerHTML = c1tab2;
+                document.getElementById("ex1-tab-2a").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c1tab2a;
+                document.getElementById("ex1-tab-2b").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c1tab2b;
+                //Card 2
+                document.getElementById("c2t").innerHTML = c2t;
+                document.getElementById("c2txt").innerHTML = c2txt;
+                document.getElementById("c2n").innerHTML = c2n;
+                document.getElementById("ex1-tab-1-b").innerHTML = "<i class='fas fa-chart-bar fa-lg'></i> " + c2tab1;
+                document.getElementById("ex1-tab-2-b").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c2tab2;
+                //Card 3
+                document.getElementById("c3t").innerHTML = c3t;
+                document.getElementById("c3txt").innerHTML = c3txt;
+                document.getElementById("c3n").innerHTML = c3n;
+                document.getElementById("ex1-tab-1-c").innerHTML = "<i class='fas fa-chart-line fa-lg'></i> " + c3tab1;
+                document.getElementById("ex1-tab-2-c").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c3tab2;
             }
         </script>
 
