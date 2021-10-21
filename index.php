@@ -99,10 +99,11 @@ if ($conn) {
                     <div class="col-md-1"></div>
                     <div class="col-md-3 d-md-none d-lg-block">
                         <section class="mt-5">
+                            
                             <!-- About -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="https://bincaglobal.org/wp-content/uploads/2019/01/UniversidadNorte.jpg"
+                                    <img src="img/uninorte.jpg"
                                          class="rounded-circle" height="60" alt="Avatar" />
                                 </div>
                                 <div class="col-md-9">
@@ -119,17 +120,16 @@ if ($conn) {
                                 </div>
                             </div>
 
-                            <!-- Suggestions -->
+
                             <div id="byT">
                                 <small>Integrantes del equipo</small>
                             </div>
 
-                            <!-- Suggested users -->
                             <div class="row">
                                 <!--First Person-->
                                 <!--Photo-->
                                 <div class="col-md-2">
-                                    <img src="https://lh3.googleusercontent.com/fife/AAWUweXZu72X8gjkNo99StbBbB24kp97k5GlT-dAuQE9FPGBELnnCLGZVbfAdkIpzsQOo564vHJDs9qv9mdLtyigVJoxeIAcMLNOHezIPBgltyD6JGwJAo-jID2W7r-C7ARS_ntybJ2vNvvQF-xVHAsXSNwvy5ckcrR8wF8z0z0TziFEy9ZcMuvKosAoSZSCQdlnCdyRpYlSEKuH8wss1fCUV7dG7E5MC5STr2-1EZB2bgI4VyZ8tyjBDwzmJZrvvy-Yvm58gyK05Fy16EGpBbKto76z2xC12PP9lU-XpQQbcIph7KYm1JFuarhXPhfe1V4Y_xUsAbl1QjxjR7lvIWTssTxO_xhRQOg5ft6HKeWrUIE-nUTONXKckiM4vLtzofzMM5NSh9T2iYXZIzxm6hfDgeo-N0KrVFniz3rWb5A62KyPvER9WFGrI1X7qPLKq3rcmLY_HzK4524W2ioKjv2pUX1yd4PVVnpbMiY-YZ0qguniVmfKVx0wmagNRXnFY9m12uHtes86dE6vJBIVHQoHDGjm3WP1UqpcvP9dAvcaT6BvD7orFfIUn4Sb1d1o2faL7tl_uwVmhAFaIc4ZCapsy6EV2IJ92HuF6InUgo6DfU_P5cPmaWC_DiA5XT7roYiS9vorHmin5-I-02dM_tVsa8SxY0Z4BpCpMaxGrNz9z4Zw5KEyM0RqxB-cbEce9qV-TtoeMOP7JjQNsvcqDMg52f4EpcWLxUtxVUFpj-jx6CRD9Q=s83-c" class="rounded-circle mt-2" height="40"
+                                    <img src="img/hc.webp" class="rounded-circle mt-2" height="40"
                                          alt="Avatar" />
                                 </div>
                                 <!--Text-->
@@ -148,7 +148,7 @@ if ($conn) {
                                 <!--Second person-->
                                 <!--Photo-->
                                 <div class="col-md-2">
-                                    <img src="https://lh3.googleusercontent.com/a-/AOh14GhJqToqzaW3rxjsnPBIBbxMVW8xbvUlSo9_zPxk=s300-p-k-rw-no" class="rounded-circle mt-2" height="40"
+                                         <img src="img/bh.webp" class="rounded-circle mt-2" height="40"
                                          alt="Avatar" />
                                 </div>
                                 <!--Text-->
@@ -167,8 +167,8 @@ if ($conn) {
                                 <!--Third Person-->
                                 <!--Photo-->
                                 <div class="col-md-2">
-                                    <img src="https://lh3.googleusercontent.com/a-/AOh14GiRnyzBzxM15E6Qd8CPg_cc1LVn_4td7OYHx0wdqw=s300-p-k-rw-no" class="rounded-circle mt-2" height="40"
-                                         alt="Avatar" />
+                                <img src="img/jj.webp" class="rounded-circle mt-2" height="40"
+                                alt="Avatar" />
                                 </div>
                                 <!--Text-->
                                 <div class="col-md-7">
@@ -275,8 +275,8 @@ if ($conn) {
                                                         echo "
                                                         <table class='table'>
                                                         <tr>
-                                                        <th>Continente</th>
-                                                        <th># de infectados</th>  
+                                                        <th>Continent</th>
+                                                        <th># of cases</th>  
                                                         </tr>";
                                                         while ($row = sqlsrv_fetch_Array($stmt, SQLSRV_FETCH_ASSOC)) {
                                                             echo "<tr>";
@@ -342,8 +342,8 @@ if ($conn) {
                                                         echo "
                                                         <table class='table'>
                                                         <tr>
-                                                        <th>Continente</th>
-                                                        <th># de muertos</th>  
+                                                        <th>Continent</th>
+                                                        <th># of deaths</th>  
                                                         </tr>";
                                                         while ($row = sqlsrv_fetch_Array($stmt4, SQLSRV_FETCH_ASSOC)) {
                                                             echo "<tr>";
@@ -365,24 +365,23 @@ if ($conn) {
 
                                     <!-- Info card  -->
                                     <div class="card-body">
-                                        <div class="container">
+                                     <!--   <div class="container">
                                             <div class="row">
                                                 <p class="note note-primary" id="c1n">
                                                     <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                                    Cum doloremque officia laboriosam.
+                                                    Cum doloremque officia laboriosam. 
                                                 </p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
                                 <!--SECOND CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title" id="c2t">Vacunados</h1>
+                                        <h1 class="card-title" id="c2t">Muertes en América del Sur</h1>
                                         <p class="card-text" id="c2txt">
-                                            This is a wider card with supporting text below as a natural lead-in to additional
-                                            content. This content is a little bit longer.
+                                        Esta segunda sección cuenta con un gráfico que brinda información más a detalle del número de muertes que ha dejado el Covid-19 en América del Sur. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico.
                                         </p>
                                     </div>
 
@@ -422,8 +421,8 @@ if ($conn) {
                                                         echo "
                                                         <table class='table'>
                                                         <tr>
-                                                        <th>País</th>
-                                                        <th>Total de fallecidos</th>  
+                                                        <th>Country</th>
+                                                        <th>Total deaths</th>  
                                                         </tr>";
                                                         while ($row = sqlsrv_fetch_Array($stmt2, SQLSRV_FETCH_ASSOC)) {
                                                             echo "<tr>";
@@ -442,24 +441,22 @@ if ($conn) {
 
                                     <!-- Info card  -->
                                     <div class="card-body">
-                                        <div class="container">
+                                       <!-- <div class="container">
                                             <div class="row">
                                                 <p class="note note-primary" id="c2n">
-                                                    <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                                    Cum doloremque officia laboriosam.
+                                                
                                                 </p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
                                 <!--THIRD CARD-->
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h1 class="card-title" id="c3t">Vacunados</h1>
+                                        <h1 class="card-title" id="c3t">Vacunados en Colombia</h1>
                                         <p class="card-text" id="c3txt">
-                                            This is a wider card with supporting text below as a natural lead-in to additional
-                                            content. This content is a little bit longer.
+                                        Esta última sección cuenta con un gráfico que brinda información acerca del número de vacunados en Colombia durante el mes de septiembre de 2021. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico de manera más detallada.
                                         </p>
                                     </div>
 
@@ -499,9 +496,9 @@ if ($conn) {
                                                         echo "
                                                         <table class='table'>
                                                         <tr>
-                                                        <th>País</th>
-                                                        <th>Fecha</th>
-                                                        <th># vacunados por millón</th>
+                                                        <th>Country</th>
+                                                        <th>Date</th>
+                                                        <th># vaccinated per million</th>
                                                         </tr>";
                                                         while ($row = sqlsrv_fetch_Array($stmt3, SQLSRV_FETCH_ASSOC)) {
                                                             echo "<tr>";
@@ -521,14 +518,13 @@ if ($conn) {
 
                                     <!-- Info card  -->
                                     <div class="card-body">
-                                        <div class="container">
+                                       <!-- <div class="container">
                                             <div class="row">
                                                 <p class="note note-primary" id="c3n">
-                                                    <strong>Note primary:</strong> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                                    Cum doloremque officia laboriosam.
+                                                    
                                                 </p>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -564,7 +560,7 @@ if ($conn) {
                         //Card 1
                         c1t = "Global cases and deaths";
                         c1txt = "This initial section has 2 graphs and provides information on the continents regarding the total number of infected and deceased globally.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Cases";
                         c1tab1a = "Graph";
                         c1tab1b = "Graph";
@@ -574,13 +570,13 @@ if ($conn) {
                         // Card 2
                         c2t = "Deaths in South America";
                         c2txt = "This second section has a graph that provides more detailed information on the number of deaths caused by Covid-19 in South America. In addition, in the second tab you can find the table with the data represented in the graph. ";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Chart";
                         c2tab2 = "Table";
                         // Card 3
                         c3t = "Vaccinated in Colombia";
                         c3txt = "This last section has a graph that provides information about the number of vaccinated in Colombia during the month of September 2021. In addition, in the second tab you can find the table with the data represented in the graph in more detail. ";
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Chart";
                         c3tab2 = "Table";
                         break;
@@ -597,7 +593,7 @@ if ($conn) {
                         //Card 1
                         c1t = "Casos y muertes globales";
                         c1txt = "Esta sección inicial cuenta con 2 gráficos y brinda información de los continentes referente al total de infectados y fallecidos a nivel global.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Casos";
                         c1tab1a = "Gráfico";
                         c1tab1b = "Gráfico";
@@ -607,13 +603,13 @@ if ($conn) {
                         //Card 2
                         c2t = "Muertes en América del Sur";
                         c2txt = "Esta segunda sección cuenta con un gráfico que brinda información más a detalle del número de muertes que ha dejado el Covid-19 en América del Sur. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico.";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Gráfico";
                         c2tab2 = "Tabla";
                         //Card 3
                         c3t = "Vacunados en Colombia";
                         c3txt = "Esta última sección cuenta con un gráfico que brinda información acerca del número de vacunados en Colombia durante el mes de septiembre de 2021. Además, en la segunda pestaña podrás encontrar la tabla con los datos representados en el gráfico de manera más detallada.";
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Gráfico";
                         c3tab2 = "Tabla";
                         break;
@@ -630,7 +626,7 @@ if ($conn) {
                         //Karte 1
                         c1t = "Globale Fälle und Todesfälle";
                         c1txt = "Dieser erste Abschnitt enthält 2 Grafiken und enthält Informationen zu den Kontinenten bezüglich der Gesamtzahl der Infizierten und Verstorbenen weltweit.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Fälle";
                         c1tab1a = "Grafik";
                         c1tab1b = "Grafik";
@@ -640,13 +636,13 @@ if ($conn) {
                         // Karte 2
                         c2t = "Todesfälle in Südamerika";
                         c2txt = "Dieser zweite Abschnitt enthält eine Grafik, die detailliertere Informationen über die Anzahl der Todesfälle durch Covid-19 in Südamerika bietet. Außerdem finden Sie im zweiten Tab die Tabelle mit den in der Grafik dargestellten Daten. ";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Diagramm";
                         c2tab2 = "Tabelle";
                         // Karte 3
                         c3t = "In Kolumbien geimpft";
                         c3txt = "Dieser letzte Abschnitt enthält eine Grafik, die Informationen über die Anzahl der Geimpften in Kolumbien im September 2021 enthält. Außerdem finden Sie auf der zweiten Registerkarte die Tabelle mit den in der Grafik ausführlicher dargestellten Daten. " ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Diagramm";
                         c3tab2 = "Tabelle";
                     break;
@@ -663,7 +659,7 @@ if ($conn) {
                         //Card 1
                         c1t = "Cas et décès dans le monde" ;
                         c1txt = "Cette section initiale comporte 2 graphiques et fournit des informations sur les continents concernant le nombre total de personnes infectées et décédées dans le monde.";
-                        c1n = "" ;
+                        //c1n = "" ;
                         c1tab1 = "Cas" ;
                         c1tab1a = "Graphique" ;
                         c1tab1b = "Graphique" ;
@@ -673,13 +669,13 @@ if ($conn) {
                         // Card 2
                         c2t = "Décès en Amérique du Sud" ;
                         c2txt = "Cette deuxième section contient un graphique qui fournit des informations plus détaillées sur le nombre de décès causés par Covid-19 en Amérique du Sud. De plus, dans le deuxième onglet, vous pouvez trouver le tableau avec les données représentées dans le graphique. ";
-                        c2n = "" ;
+                        //c2n = "" ;
                         c2tab1 = "Graphique" ;
                         c2tab2 = "Tableau" ;
                         // Card 3
                         c3t = "Vacciné en Colombie" ;
                         c3txt = "Cette dernière section contient un graphique qui fournit des informations sur le nombre de vaccinés en Colombie au cours du mois de septembre 2021. De plus, dans le deuxième onglet, vous pouvez trouver le tableau avec les données représentées dans le graphique plus en détail. " ;
-                        c3n = "" ;
+                        //c3n = "" ;
                         c3tab1 = "Graphique" ;
                         c3tab2 = "Tableau" ;
                         break;
@@ -696,7 +692,7 @@ if ($conn) {
                         //Card 1
                         c1t = "Casi e decessi globali";
                         c1txt = "Questa sezione iniziale ha 2 grafici e fornisce informazioni sui continenti per quanto riguarda il numero totale di infetti e deceduti a livello globale.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Casi";
                         c1tab1a = "Grafico";
                         c1tab1b = "Grafico";
@@ -706,13 +702,13 @@ if ($conn) {
                         // Card 2
                         c2t = "Decessi in Sud America";
                         c2txt = "Questa seconda sezione ha un grafico che fornisce informazioni più dettagliate sul numero di decessi causati da Covid-19 in Sud America. Inoltre, nella seconda scheda puoi trovare la tabella con i dati rappresentati nel grafico. ";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Grafico";
                         c2tab2 = "Tabella";
                         // Card 3
                         c3t = "Vaccinato in Colombia";
                         c3txt = "Quest'ultima sezione ha un grafico che fornisce informazioni sul numero di vaccinati in Colombia durante il mese di settembre 2021. Inoltre, nella seconda scheda puoi trovare la tabella con i dati rappresentati nel grafico in modo più dettagliato. " ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Grafico";
                         c3tab2 = "Tabella";
                         break;
@@ -729,7 +725,7 @@ if ($conn) {
                         // Card 1
                         c1t = "Casos e óbitos globais";
                         c1txt = "Esta seção inicial possui 2 gráficos e fornece informações sobre os continentes em relação ao número total de infectados e falecidos globalmente.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Casos";
                         c1tab1a = "Gráfico";
                         c1tab1b = "Gráfico";
@@ -739,13 +735,13 @@ if ($conn) {
                         // Card 2
                         c2t = "Mortes na América do Sul";
                         c2txt = "Esta segunda seção possui um gráfico que fornece informações mais detalhadas sobre o número de mortes causadas pela Covid-19 na América do Sul. Além disso, na segunda aba você encontra a tabela com os dados representados no gráfico.";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Gráfico";
                         c2tab2 = "Tabela";
                         // Card 3
                         c3t = "Vacinado na Colômbia";
                         c3txt = "Esta última seção contém um gráfico que fornece informações sobre o número de vacinados na Colômbia durante o mês de setembro de 2021. Além disso, na segunda aba você pode encontrar a tabela com os dados representados no gráfico com mais detalhes." ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Gráfico";
                         c3tab2 = "Tabela";
                         break;
@@ -762,7 +758,7 @@ if ($conn) {
                         // Card 1
                         c1t = "Глобальные случаи и смерти";
                         c1txt = "Этот начальный раздел содержит 2 графика и предоставляет информацию по континентам относительно общего числа зараженных и умерших во всем мире.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "Дела";
                         c1tab1a = "График";
                         c1tab1b = "График";
@@ -772,13 +768,13 @@ if ($conn) {
                         // Card 2
                         c2t = "Смерти в Южной Америке";
                         c2txt = "В этом втором разделе есть график, который предоставляет более подробную информацию о количестве смертей, вызванных Covid-19 в Южной Америке. Кроме того, во второй вкладке вы можете найти таблицу с данными, представленными на графике.";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "Диаграмма";
                         c2tab2 = "Таблица";
                         // Card 3
                         c3t = "Вакцинирован в Колумбии";
                         c3txt = "В этом последнем разделе есть график, который предоставляет информацию о количестве вакцинированных в Колумбии в течение сентября 2021 года. Кроме того, на второй вкладке вы можете найти таблицу с данными, представленными на графике более подробно.";
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "Диаграмма";
                         c3tab2 = "Таблица";
                         break;
@@ -795,7 +791,7 @@ if ($conn) {
                         // Card 1
                         c1t = "الحالات والوفيات العالمية" ;
                         c1txt = "يحتوي هذا القسم الأولي على رسمين بيانيين ويقدم معلومات عن القارات فيما يتعلق بالعدد الإجمالي للمصابين والمتوفين على مستوى العالم.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "الحالات" ;
                         c1tab1a = "رسم بياني" ;
                         c1tab1b = "رسم بياني";
@@ -805,13 +801,13 @@ if ($conn) {
                         // البطاقة 2
                         c2t = "وفيات في أمريكا الجنوبية" ;
                         c2txt = "يحتوي هذا القسم الثاني على رسم بياني يوفر معلومات أكثر تفصيلاً عن عدد الوفيات الناجمة عن Covid-19 في أمريكا الجنوبية. بالإضافة إلى ذلك ، في علامة التبويب الثانية ، يمكنك العثور على جدول بالبيانات الممثلة في الرسم البياني.";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "مخطط";
                         c2tab2 = "جدول";
                         // البطاقة 3
                         c3t = "تم تلقيحها في كولومبيا";
                         c3txt = "يحتوي هذا القسم الأخير على رسم بياني يوفر معلومات حول عدد الذين تم تطعيمهم في كولومبيا خلال شهر سبتمبر 2021. بالإضافة إلى ذلك ، في علامة التبويب الثانية ، يمكنك العثور على الجدول الذي يحتوي على البيانات الممثلة في الرسم البياني بمزيد من التفصيل.";
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "مخطط";
                         c3tab2 = "جدول";
                         break;
@@ -828,7 +824,7 @@ if ($conn) {
                         //カード1
                         c1t = "世界的な症例と死亡";
                         c1txt = "この最初のセクションには2つのグラフがあり、世界の感染者と死亡者の総数に関する大陸に関する情報を提供します。";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "ケース";
                         c1tab1a = "グラフ";
                         c1tab1b = "グラフ";
@@ -838,13 +834,13 @@ if ($conn) {
                         //カード2
                         c2t = "南アメリカでの死";
                         c2txt = "この2番目のセクションには、南米でCovid-19によって引き起こされた死亡者数に関する詳細情報を提供するグラフがあります。さらに、2番目のタブには、グラフで表されたデータを含む表があります。";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "チャート";
                         c2tab2 = "テーブル";
                         //カード3
                         c3t = "コロンビアでワクチン接種";
                         c3txt = "この最後のセクションには、2021年9月の間にコロンビアでワクチン接種された数に関する情報を提供するグラフがあります。さらに、2番目のタブで、グラフに表示されたデータを含む表をより詳細に見つけることができます。" ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "チャート";
                         c3tab2 = "テーブル";
                         break;
@@ -861,7 +857,7 @@ if ($conn) {
                         //카드 1
                         c1t = "글로벌 사례 및 사망";
                         c1txt = "이 초기 섹션에는 2개의 그래프가 있으며 전 세계적으로 감염 및 사망자의 총 수에 관한 대륙 정보를 제공합니다.";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "케이스";
                         c1tab1a = "그래프";
                         c1tab1b = "그래프";
@@ -871,13 +867,13 @@ if ($conn) {
                         // 카드 2
                         c2t = "남아메리카의 사망";
                         c2txt = "이 두 번째 섹션에는 남아메리카의 Covid-19로 인한 사망자 수에 대한 자세한 정보를 제공하는 그래프가 있습니다. 또한 두 번째 탭에서는 그래프에 표시된 데이터가 있는 표를 찾을 수 있습니다. ";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "차트";
                         c2tab2 = "표";
                         // 카드 3
                         c3t = "콜롬비아에서 예방 접종";
                         c3txt = "이 마지막 섹션에는 2021년 9월 한 달 동안 콜롬비아에서 예방 접종을 한 사람의 수에 대한 정보를 제공하는 그래프가 있습니다. 또한 두 번째 탭에서 그래프에 표시된 데이터가 있는 표를 더 자세히 찾을 수 있습니다. " ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "차트";
                         c3tab2 = "표";
                         break;
@@ -895,7 +891,7 @@ if ($conn) {
                         //卡片1
                         c1t = "全球病例和死亡人数";
                         c1txt = "这个初始部分有 2 个图表，并提供了有关全球感染和死亡总数的各大洲的信息。";
-                        c1n = "";
+                        //c1n = "";
                         c1tab1 = "案例";
                         c1tab1a = "图表";
                         c1tab1b = "图表";
@@ -905,13 +901,13 @@ if ($conn) {
                         //卡片2
                         c2t = "南美洲的死亡人数";
                         c2txt = "这第二部分有一个图表，提供了有关南美洲 Covid-19 造成的死亡人数的更详细信息。此外，在第二个选项卡中，您可以找到包含图表中数据的表格。";
-                        c2n = "";
+                        //c2n = "";
                         c2tab1 = "图表";
                         c2tab2 = "表格";
                         //卡片3
                         c3t = "在哥伦比亚接种过疫苗";
                         c3txt = "最后一部分的图表提供了有关 2021 年 9 月哥伦比亚接种疫苗数量的信息。此外，在第二个选项卡中，您可以找到包含图表中更详细数据的表格。" ;
-                        c3n = "";
+                        //c3n = "";
                         c3tab1 = "图表";
                         c3tab2 = "表格";
                         break;
@@ -930,7 +926,7 @@ if ($conn) {
                 //Card 1
                 document.getElementById("c1t").innerHTML = c1t;
                 document.getElementById("c1txt").innerHTML = c1txt;
-                document.getElementById("c1n").innerHTML = c1n;
+                //document.getElementById("c1n").innerHTML = c1n;
                 document.getElementById("ex1-tab-1").innerHTML = c1tab1;
                 document.getElementById("ex1-tab-1a").innerHTML = "<i class='fas fa-chart-pie fa-lg'></i> " + c1tab1a;
                 document.getElementById("ex1-tab-1b").innerHTML = "<i class='fas fa-chart-pie fa-lg'></i> " + c1tab1b;
@@ -940,13 +936,13 @@ if ($conn) {
                 //Card 2
                 document.getElementById("c2t").innerHTML = c2t;
                 document.getElementById("c2txt").innerHTML = c2txt;
-                document.getElementById("c2n").innerHTML = c2n;
+                //document.getElementById("c2n").innerHTML = c2n;
                 document.getElementById("ex1-tab-1-b").innerHTML = "<i class='fas fa-chart-bar fa-lg'></i> " + c2tab1;
                 document.getElementById("ex1-tab-2-b").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c2tab2;
                 //Card 3
                 document.getElementById("c3t").innerHTML = c3t;
                 document.getElementById("c3txt").innerHTML = c3txt;
-                document.getElementById("c3n").innerHTML = c3n;
+                //document.getElementById("c3n").innerHTML = c3n;
                 document.getElementById("ex1-tab-1-c").innerHTML = "<i class='fas fa-chart-line fa-lg'></i> " + c3tab1;
                 document.getElementById("ex1-tab-2-c").innerHTML = "<i class='fas fa-table fa-lg'></i> " + c3tab2;
             }
@@ -965,7 +961,7 @@ if ($conn) {
             var myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
+                    labels: ['Europe', 'North America', 'South America', 'Oceania', 'Africa', 'Asia'],
                     datasets: [{
                             data: [611182330,
                                 536038560,
@@ -1081,11 +1077,11 @@ if ($conn) {
         var myChart3 = new Chart(ctx3, {
             type: 'line',
             data: {
-                labels: ['Semana 1',
-                    'Semana 2',
-                    'Semana 3',
-                    'Semana 4',
-                    'Semana 5'],
+                labels: ['Week 1',
+                    'Week 2',
+                    'Week 3',
+                    'Week 4',
+                    'Week 5'],
                 datasets: [{
                         data: [1.0723,
                             2.7238,
@@ -1127,7 +1123,7 @@ if ($conn) {
             var myChart4 = new Chart(ctx4, {
                 type: 'pie',
                 data: {
-                    labels: ['Europa', 'América del Norte', 'América del sur', 'Oceanía', 'África', 'Asia'],
+                    labels: ['Europe', 'North America', 'South America', 'Oceania', 'Africa', 'Asia'],
                     datasets: [{
                             data: [1253579,
                                 1087310,
